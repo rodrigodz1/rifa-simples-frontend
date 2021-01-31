@@ -2,13 +2,13 @@ import Head from 'next/head'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="px-8 m-5 text-xl font-medium">
       <Head>
-        <title>Dream Draw</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Dream Draw - Faça sua aposta</title>
+        <link rel="icon" href="/clover.svg" />
       </Head>
-      atualmente em desenvolvimento :p
-    </div>
+      Dream Cash - Multiplique suas chances de ficar rico
       
+    </div>
   )
 }
