@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function Header() {
 	return (
 		<div className="flex justify-between px-20 bg-black shadow-xl">
