@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Content() {
+const Content = () => {
 	return (
 		<div className="h-screen bg-gray-200">
 			Conteúdo

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header() {
+const Header = () => {
 	return (
 		<div className="flex justify-between px-20 bg-black shadow-xl">
 			<img className="max-h-16 max-w-16 justify-self-center" src="images/fingers.svg" href="/" />
@@ -9,3 +9,5 @@ export default function Header() {
 		</div>
 	)
 }
+
+export default Header;
