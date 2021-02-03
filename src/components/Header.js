@@ -1,6 +1,6 @@
 export default function Header() {
 	return (
-		<div className="flex justify-between border border-black px-20 bg-black shadow-xl h-15">
+		<div className="flex justify-between border border-black px-20 bg-black shadow-xl h-15 border border-white">
 			<div className="text-white text-xl rounded-md justify-self-center">
 				<img className=" max-h-16 pr-6" src="images/fingers.svg" href="/" />
 			</div>
