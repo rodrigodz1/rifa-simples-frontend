@@ -10,11 +10,16 @@ export default function Home() {
         <title>Dream Draw - Faça sua aposta</title>
         <link rel="icon" href="/clover.svg" />
       </Head>
-      <Header />
 
-      <Content />
+      <body className="flex flex-col">
 
-      <Footer />
+        <Header />
+
+        <Content />
+
+        <Footer />
+
+      </body>
 
     </div>
 
