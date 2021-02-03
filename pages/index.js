@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/clover.svg" />
       </Head>
 
-      <body className="flex flex-col h-full">
+      <body className="flex flex-col">
 
         <Header />
 
