@@ -1,16 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
-import Footer from './Footer'
+import Link from 'next/link'
 
 const Informatives = (props) => {
 	return (
-		<div className="border border-black rounded-md text-center m-2 bg-gray-500">
+		<div className="border border-black rounded-md text-center m-2 bg-gray-500 text-gray-100 hover:bg-black">
 			{props.title}
 			<div>
-				<ul>
-					<li className="border border-black">{props.data}</li>
-					<li>Usuário 2</li>
-					<li>Usuário 3</li>
+				<ul className="bg-white">
+					<li className="border border-black text-black">{props.data}</li>
 				</ul>
 			</div>
 		</div>
@@ -33,7 +31,6 @@ const Content = () => {
 			</div>
 
 			<div className="border border-black text-center my-20">Como funciona</div>
-			<Footer />
 		</div>
 
 	)
