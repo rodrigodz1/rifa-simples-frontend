@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Header from '../src/components/Header'
 import Content from '../src/components/Content'
-import Footer from '../src/components/Footer'
 
 export default function Home() {
   return (
@@ -11,13 +10,11 @@ export default function Home() {
         <link rel="icon" href="/clover.svg" />
       </Head>
 
-      <body className="flex flex-col">
+      <body className="flex flex-col position-absolute">
 
         <Header />
 
         <Content />
-
-        <Footer />
 
       </body>
 
