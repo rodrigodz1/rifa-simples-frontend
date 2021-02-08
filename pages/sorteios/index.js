@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Header from '../../src/components/Header'
+import Footer from '../../src/components/Footer'
 
 import React, { useState } from 'react'
 
@@ -15,18 +16,20 @@ function Content({ raffles }) {
                 </div>
 
                 <div className="grid grid-cols-3 mx-6">
+                    {(raffles.data).map(({ id, name, date }) => (
+                        <ul className="border border-black text-center m-2">
+                            {date}
+                            <li className="border-t border-black"> {name} </li>
 
-                    <ol>
-                        {(raffles.data).map(({ id, name }) => (
-                            <li key={id}> {name} </li>
-                        ))}
-                    </ol>
+                        </ul>
+                    ))}
 
 
                 </div>
 
                 <div className="border border-black text-center my-20">Como funciona</div>
             </div>
+            <Footer />
         </div>
 
     )
