@@ -2,8 +2,12 @@ import Head from 'next/head'
 import Header from '../src/components/Header'
 import Content from '../src/components/Content'
 import Footer from '../src/components/Footer'
+import React from 'react'
+
+
 
 export default function Home() {
+
   return (
     <div className="">
       <Head>
@@ -13,7 +17,7 @@ export default function Home() {
 
       <body className="flex flex-col position-absolute">
 
-        <Header />
+        <Header name="SORTEIOS" link="sorteios" />
 
         <Content />
 
@@ -25,3 +29,5 @@ export default function Home() {
 
   )
 }
+
+
