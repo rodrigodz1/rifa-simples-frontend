@@ -8,17 +8,19 @@ function Content({ raffles }) {
 
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [myNumbers, setMyNumbers] = useState([])
+    const precoDaRifa = 10
 
     const Cart = (props) => {
         return (
             <div className="sticky bottom-0 text-center bg-green-800">
+
+                {isModalVisible ? <h1 className="text-white">Números: {myNumbers}</h1> : null}
+                <p className="text-white">Total: R$ {myNumbers.length * precoDaRifa}</p>
+                <button className="bg-yellow-600 text-white mr-2 mb-2 p-1 rounded-md">Reservar números</button>
                 <button onClick={() => {
                     setIsModalVisible(false)
                     setMyNumbers([])
-                }} className="bg-black text-white" >Limpar carrinho</button>
-                {isModalVisible ? <h1>Esse é seu carrinho. Números?: {myNumbers}</h1> : null}
-
-                <button className="bg-yellow-600 text-white">Reservar números</button>
+                }} className="bg-black text-white ml-2 mb-2 p-1 rounded-md" >Limpar carrinho</button>
             </div>
         )
     }
@@ -31,18 +33,18 @@ function Content({ raffles }) {
                 btnArray.push(<button onClick={() => {
                     setIsModalVisible(true)
                     setMyNumbers(myNumbers => [...myNumbers, "00" + i + " "]) //passar só i futuramente
-                }} className="bg-green-600 text-white m-2">{"00" + i}</button>)
+                }} className="bg-green-600 text-white m-2 rounded-md">{"00" + i}</button>)
 
             } else if ((i + "").length == 2) {
                 btnArray.push(<button onClick={() => {
                     setIsModalVisible(true)
                     setMyNumbers(myNumbers => [...myNumbers, "0" + i + " "])
-                }} className="bg-green-600 text-white m-2">{"0" + i}</button>)
+                }} className="bg-green-600 text-white m-2 rounded-md">{"0" + i}</button>)
             } else {
                 btnArray.push(<button onClick={() => {
                     setIsModalVisible(true)
                     setMyNumbers(myNumbers => [...myNumbers, i + " "])
-                }} className="bg-green-600 text-white m-2">{i}</button>)
+                }} className="bg-green-600 text-white m-2 rounded-md">{i}</button>)
             }
 
         }
@@ -72,7 +74,7 @@ function Content({ raffles }) {
 
 
 
-                <div className="grid grid-cols-5 laptop:grid-cols-10 desktop:grid-cols-12 border border-black mx-10">
+                <div className="grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 border border-black mx-10">
                     <Btn num={1000} />
                 </div>
 
