@@ -72,7 +72,7 @@ function Content({ raffles }) {
 
 
 
-                <div className="grid md:grid-cols-5 grid-cols-10 border border-black mx-10">
+                <div className="grid grid-cols-5 laptop:grid-cols-10 desktop:grid-cols-12 border border-black mx-10">
                     <Btn num={1000} />
                 </div>
 
