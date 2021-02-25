@@ -1,16 +1,21 @@
 import Image from 'next/image'
 import Header from '../../src/components/Header'
+import { withRouter } from 'next/router'
+import PaymentDetails from '../../src/components/PaymentDetails'
 
 import React, { useState } from 'react'
 
 
-function Content({ raffles }) {
+function Content({ router: { query } }) {
 
     const [isBankInfoVisible, setIsBankInfoVisible] = useState(false)
     const [banco, setBanco] = useState()
     const [titular, setTitular] = useState()
     const [conta, setConta] = useState()
     const [agencia, setAgencia] = useState()
+
+    const numbers = (query.object);
+    const price = (query.price)
 
     const Bank = (props) => {
         return (
@@ -36,12 +41,9 @@ function Content({ raffles }) {
             <Header name="INÍCIO" link="/" />
             <div className="">
 
-                <div className="grid grid-cols-3 mx-6 mt-8">
+                <div className="grid grid-cols-2 mx-6 mt-8">
 
-                    <div className="border border-black text-center m-2">Como funciona:<p>1. Você realiza a transferência para uma de nossas contas
-                        </p><p>2. Envie o comprovante para o nosso WhatsApp</p>
-                        <p>3. Iremos confirmar o pagamento e você já poderá visualizá-lo na página usando seu número de telefone.</p>
-                    </div>
+                    <PaymentDetails price={price} />
                     <div className="text-center pt-4">
                         Escolha o Banco para fazer a transferência
                         <div className="grid grid-cols-3 justify-between bg-yellow-100 py-12">
@@ -59,8 +61,8 @@ function Content({ raffles }) {
                     </div>
 
                     <div className="text-center m-2">
-                        Etapa de pagamento
-                        <div className="border border-black">Você está quase lá!</div>
+                        Números selecionados
+                        <div className="bg-black text-white">{numbers}</div>
                     </div>
 
                 </div>
@@ -93,4 +95,4 @@ export async function getStaticProps() {
     }
 }
 
-export default Content;
+export default withRouter(Content);

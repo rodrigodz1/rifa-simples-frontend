@@ -5,12 +5,18 @@ class Button extends React.Component {
         super(props);
 
         this.state = {
-            clicked: false
+            clicked: false,
+            status: this.props.situation,
+            number: this.props.fetch_num,
+            className: this.props.className
         }
-
 
         this.changeColor = this.changeColor.bind(this)
     }
+
+
+
+
 
     changeColor = (num) => {
         this.setState({ clicked: !this.state.clicked })
@@ -21,21 +27,38 @@ class Button extends React.Component {
     render() {
         let btn_class = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900";
         let btn_status = false;
+        let btn_num = this.props.name
 
         if (this.state.clicked) {
             btn_class = "border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-100"
             btn_status = true
         }
 
+        if (this.state.status == 'reseverd') {
+            console.log(this.state.number);
+        }
+
+        //console.log(this.props.fetch_num, this.props.situation);
+        //if ((this.props.name == this.props.fetch_num) && (this.props.situation == 'reserved')) {
+        //    btn_class = "border border-green-600 bg-yellow-100 text-green-600 m-2 rounded-md hover:bg-green-100"
+        //    btn_status = true
+        //} recebi this.props.fetch_num e this.props.situation. Devo processá-los
+
 
         return (
 
-            <button className={btn_class} disabled={btn_status} onClick={() => this.changeColor(this.props.name)}  >
-                {this.props.name}
-            </button>
+            <>
 
+                <button className={this.state.className} disabled={btn_status} onClick={() => this.changeColor(this.state.number)}  >
+                    {this.state.number}
+                </button>
+
+            </>
 
         )
     }
 }
+
+
+
 export default Button;

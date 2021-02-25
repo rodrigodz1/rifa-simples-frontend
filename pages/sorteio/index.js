@@ -10,49 +10,6 @@ import React, { useState, useRef } from 'react'
 
 function Content({ tickets }) {
 
-    const [isModalVisible, setIsModalVisible] = useState(false)
-    const [myNumbers, setMyNumbers] = useState([])
-
-
-
-    const nums = [12, 17, 200] //botoes comprados, consumir de api 
-
-    const precoDaRifa = 10
-
-    //
-
-    const Btn = (props) => {
-        const btnArray = []
-
-        for (let i = 0; i < props.num; i++) {
-
-            if (i in nums)
-                console.log("We've found", nums[i]);
-
-            if ((i + "").length == 1) {
-                btnArray.push(<button onClick={() => {
-                    setIsModalVisible(true)
-                    setMyNumbers(myNumbers => [...myNumbers, "00" + i + " "]) //passar só i futuramente
-                }} className={props.className}>{"00" + i}</button>)
-
-            } else if ((i + "").length == 2) {
-                btnArray.push(<button onClick={() => {
-                    setIsModalVisible(true)
-                    setMyNumbers(myNumbers => [...myNumbers, "0" + i + " "])
-                }} className={props.className}>{"0" + i}</button>)
-            } else {
-                btnArray.push(<button onClick={() => {
-                    setIsModalVisible(true)
-                    setMyNumbers(myNumbers => [...myNumbers, i + " "])
-                }} className={props.className}>{i}</button>)
-            }
-        }
-
-        return btnArray
-    }
-
-
-
     return (
         <div>
             <Header name="INÍCIO" link="/" />
@@ -81,6 +38,19 @@ function Content({ tickets }) {
         </div>
 
     )
+}
+
+export async function getServerSideProps() {
+    const { API_URL } = process.env
+    const res = await fetch(`${API_URL}/tickets`)
+
+    const data = await res.json()
+
+    return {
+        props: {
+            tickets: data
+        }
+    }
 }
 
 export default Content;

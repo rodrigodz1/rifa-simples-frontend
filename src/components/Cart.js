@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { Component, useState } from 'react'
 
 class Cart extends Component {
@@ -14,6 +15,7 @@ class Cart extends Component {
         this.showCart = this.showCart.bind(this)
 
         this.hideCart = this.hideCart.bind(this)
+
     }
 
     showCart = () => {
@@ -25,6 +27,7 @@ class Cart extends Component {
         this.setState({ numbers: "" })
         this.props.functionCallFromParent("");
     }
+
 
     //functions;;;
 
@@ -44,8 +47,14 @@ class Cart extends Component {
                 <div className="border-green-400 border-l-2 pl-2 ">
                     <h1 className="text-white ">Números: {this.state.numbers + " "} </h1>
                     <p className="text-white">Total: R$ {(this.state.numbers).length * this.precoDaRifa}</p>
+                    <span className="bg-yellow-600 text-white p-1 rounded-md shadow-xl">
+                        <Link href={{
+                            pathname: '/pagamento',
+                            query: { object: this.state.numbers + " ", price: (this.state.numbers).length * this.precoDaRifa }
+                        }
+                        }>Reservar número(s)</Link>
+                    </span>
 
-                    <button className="bg-yellow-600 text-white mr-2 mb-2 p-1 rounded-md">Reservar números</button>
 
                     <button onClick={_ => document.location.reload()} className="bg-black text-white ml-2 mb-2 p-1 rounded-md" >Limpar carrinho</button>
                 </div>
