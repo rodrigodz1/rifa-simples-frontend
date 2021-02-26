@@ -73,11 +73,11 @@ class Board extends Component {
                         botoes.map((botao, i) => {
 
                             if (this.numbers.reserveds.includes(botao)) {
-                                className = "bg-yellow-600 text-white m-2 rounded-md hover:bg-yellow-900";
+                                className = "bg-yellow-600 text-white m-2 rounded-md ";
                                 situation = 'reserved'
                                 fetch_num = botao
                             } else if (this.numbers.paids.includes(botao)) {
-                                className = "bg-red-600 text-white m-2 rounded-md hover:bg-red-900";
+                                className = "bg-red-600 text-white m-2 rounded-md ";
                                 situation = 'paid'
                                 fetch_num = botao
                             } else {

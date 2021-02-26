@@ -19,7 +19,12 @@ class Button extends React.Component {
 
 
     changeColor = (num) => {
+        if (this.state.status == 'reserved' || this.state.status == 'paid') {
+            return
+        }
         this.setState({ clicked: !this.state.clicked })
+        this.setState({ className: "border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-100" })
+
         //console.log(num);
         this.props.functionCallFromParent(num);
     }
@@ -30,13 +35,11 @@ class Button extends React.Component {
         let btn_num = this.props.name
 
         if (this.state.clicked) {
-            btn_class = "border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-100"
+            //btn_class = "border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-100"
             btn_status = true
         }
 
-        if (this.state.status == 'reseverd') {
-            console.log(this.state.number);
-        }
+
 
         //console.log(this.props.fetch_num, this.props.situation);
         //if ((this.props.name == this.props.fetch_num) && (this.props.situation == 'reserved')) {
