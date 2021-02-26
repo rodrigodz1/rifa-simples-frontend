@@ -7,7 +7,7 @@ class Board extends Component {
         this.state = {
             value_key: [],
             Are_Numbers_Fetched: false,
-            fetch_Numbers: {},
+            fetch_Numbers: this.props.tickets,
         }
 
         this.numbers = {
@@ -17,14 +17,17 @@ class Board extends Component {
     }
 
     async componentDidMount() {
-        const { API_URL } = process.env
-        const res = await fetch(`${API_URL}/tickets`)
+        //const { API_URL } = process.env
+        //const res = await fetch(`${API_URL}/tickets`)
 
-        const data = await res.json()
+        //const data = this.props.tickets
 
-        this.setState({ fetch_Numbers: data })
 
-        for (let i = 0; i < data.length; i++) {
+        //this.setState({ fetch_Numbers: this.props.tickets })
+
+        console.log(this.state.fetch_Numbers);
+
+        for (let i = 0; i < this.state.fetch_Numbers.length; i++) {
 
             this.state.fetch_Numbers[i].state == 'reserved' ? this.numbers.reserveds.push(this.state.fetch_Numbers[i].number) : null
             this.state.fetch_Numbers[i].state == 'paid' ? this.numbers.paids.push(this.state.fetch_Numbers[i].number) : null

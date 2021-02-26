@@ -18,6 +18,7 @@ function Content({ rifas }) {
                     rifas.map(rifa => (
                         <SorteioCard key={rifa.id} rifa={rifa} />
                     ))
+
                 }
             </div>
 
