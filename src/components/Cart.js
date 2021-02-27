@@ -59,7 +59,7 @@ class Cart extends Component {
                 const response = await api.post('/tickets', {
                     state: "reserved",
                     number: this.props.valueFromParent[0],
-                    rifa: [this.state.rifa_id]
+                    rifa: this.state.rifa_id
                 })
 
                 console.log(response.data.id);
