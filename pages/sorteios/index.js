@@ -13,7 +13,7 @@ function Content({ rifas }) {
         <div>
             <Header name="INÍCIO" link="/" />
 
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-1 justify-center">
                 {
                     rifas.map(rifa => (
                         <SorteioCard key={rifa.id} rifa={rifa} />

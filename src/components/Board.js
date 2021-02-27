@@ -85,7 +85,7 @@ class Board extends Component {
                                 situation = 'paid'
                                 fetch_num = botao
                             } else {
-                                className = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900";
+                                className = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900 shadow-xl";
                                 situation = 'available'
                                 fetch_num = botao
                             }

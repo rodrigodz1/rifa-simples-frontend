@@ -19,14 +19,14 @@ function Sorteio({ rifas }) {
                         informaçã
                     </div>
                 </div>
-                <div className="border border-black m-2 pl-10">
-                    <button className="bg-green-600 text-white mx-2 p-1">Disponíveis</button>
-                    <button className="bg-yellow-600 text-white mx-2 p-1">Reservados</button>
-                    <button className="bg-red-600 text-white mx-2 p-1">Pagos</button>
+                <div className="grid grid-cols-3 m-2">
+                    <button className="bg-green-600 text-white mx-2 p-2 font-bold rounded-full">Disponíveis</button>
+                    <button className="bg-yellow-600 text-white mx-2 p-2 font-bold rounded-full">Reservados</button>
+                    <button className="bg-red-600 text-white mx-2 p-2 font-bold rounded-full">Pagos</button>
                 </div>
 
 
-                <Board className="grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 border border-black mx-10" tickets={rifas.rifa_tickets} rifa_id={rifas.id} />
+                <Board className="bg-yellow-200 grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 rounded-md mx-10" tickets={rifas.rifa_tickets} rifa_id={rifas.id} />
 
                 <div className="border border-black text-center my-20">possible footer</div>
             </div>
