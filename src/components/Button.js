@@ -34,6 +34,12 @@ class Button extends React.Component {
         let btn_status = false;
         let btn_num = this.props.name
 
+        if (btn_num < 10) {
+            btn_num = "00" + btn_num
+        } else if (btn_num < 100 && btn_num > 9) {
+            btn_num = "0" + btn_num
+        }
+
         if (this.state.clicked) {
             //btn_class = "border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-100"
             btn_status = true
@@ -53,7 +59,8 @@ class Button extends React.Component {
             <>
 
                 <button className={this.state.className} disabled={btn_status} onClick={() => this.changeColor(this.state.number)}  >
-                    {this.state.number}
+
+                    {btn_num}
                 </button>
 
             </>

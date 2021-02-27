@@ -8,6 +8,7 @@ class Board extends Component {
             value_key: [],
             Are_Numbers_Fetched: false,
             fetch_Numbers: this.props.tickets,
+            rifa_id: this.props.rifa_id
         }
 
         this.numbers = {
@@ -25,7 +26,7 @@ class Board extends Component {
 
         //this.setState({ fetch_Numbers: this.props.tickets })
 
-        console.log(this.state.fetch_Numbers);
+        //console.log(this.state.fetch_Numbers);
 
         for (let i = 0; i < this.state.fetch_Numbers.length; i++) {
 
@@ -98,7 +99,8 @@ class Board extends Component {
 
                 { this.state.value_key != "" ? <Cart className="sticky flex w-screen justify-center bottom-0 text-center bg-green-800 pb-2 pt-2 align-center"
                     functionCallFromParent={this.parentFunction.bind(this)}
-                    valueFromParent={this.state.value_key} /> : null}
+                    valueFromParent={this.state.value_key}
+                    rifa_id={this.state.rifa_id} /> : null}
             </div>
         );
     }

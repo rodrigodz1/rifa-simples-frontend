@@ -26,7 +26,7 @@ function Sorteio({ rifas }) {
                 </div>
 
 
-                <Board className="grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 border border-black mx-10" tickets={rifas.rifa_tickets} />
+                <Board className="grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 border border-black mx-10" tickets={rifas.rifa_tickets} rifa_id={rifas.id} />
 
                 <div className="border border-black text-center my-20">possible footer</div>
             </div>
