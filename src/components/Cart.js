@@ -13,7 +13,7 @@ class Cart extends Component {
             numbers: [],
             name: '',
             cel: '',
-            rifa_id: this.props.rifa_id
+            rifa_id: parseInt(this.props.rifa_id)
         }
 
         this.precoDaRifa = 10
