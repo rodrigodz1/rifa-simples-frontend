@@ -55,7 +55,7 @@ class Cart extends Component {
         //this.props.valueFromParent = array com os numeros escolhidos
         //(this.state.numbers).length * this.precoDaRifa = valor total a ser pago
         try {
-            if (this.state.name != '' && this.state.cel != '') {
+            if (this.state.name != '' && (this.state.cel).length > 8 && (this.state.cel).length < 12) {
                 const response = await api.post('/tickets', {
                     state: "reserved",
                     number: this.props.valueFromParent[0],
@@ -74,7 +74,7 @@ class Cart extends Component {
                 event.preventDefault();
                 document.location.reload()
             } else {
-                alert('dados vazios.....')
+                alert('dados incorretos.....')
             }
 
         } catch (error) {
