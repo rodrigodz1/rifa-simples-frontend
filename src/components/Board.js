@@ -76,11 +76,17 @@ class Board extends Component {
 
                         botoes.map((botao, i) => {
 
-                            if (this.numbers.reserveds.includes(botao)) {
+                            if (botao < 10) {
+                                botao = "00" + botao
+                            } else if (botao < 100 && botao > 9) {
+                                botao = "0" + botao
+                            }
+
+                            if (this.numbers.reserveds.includes(parseInt(botao))) {
                                 className = "bg-yellow-600 text-white m-2 rounded-md ";
                                 situation = 'reserved'
                                 fetch_num = botao
-                            } else if (this.numbers.paids.includes(botao)) {
+                            } else if (this.numbers.paids.includes(parseInt(botao))) {
                                 className = "bg-red-600 text-white m-2 rounded-md ";
                                 situation = 'paid'
                                 fetch_num = botao
@@ -90,6 +96,8 @@ class Board extends Component {
                                 fetch_num = botao
                             }
 
+
+
                             return <Button className={className} fetch_num={fetch_num} situation={situation} valueFromParent={this.state.value_key} functionCallFromParent={this.parentFunction.bind(this)} name={botao} />
                         })
 
@@ -97,7 +105,7 @@ class Board extends Component {
                 }
 
 
-                { this.state.value_key != "" ? <Cart className="sticky flex w-screen justify-center bottom-0 text-center bg-green-800 pb-2 pt-2 align-center"
+                { this.state.value_key != '' ? <Cart className="sticky flex w-screen justify-center bottom-0 text-center bg-green-800 pb-2 pt-2 align-center"
                     functionCallFromParent={this.parentFunction.bind(this)}
                     valueFromParent={this.state.value_key}
                     rifa_id={this.state.rifa_id} /> : null}

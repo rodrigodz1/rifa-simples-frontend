@@ -19,6 +19,7 @@ class Button extends React.Component {
 
 
     changeColor = (num) => {
+        //num = parseInt(num)
         if (this.state.status == 'reserved' || this.state.status == 'paid') {
             return
         }
@@ -34,11 +35,7 @@ class Button extends React.Component {
         let btn_status = false;
         let btn_num = this.props.name
 
-        if (btn_num < 10) {
-            btn_num = "00" + btn_num
-        } else if (btn_num < 100 && btn_num > 9) {
-            btn_num = "0" + btn_num
-        }
+
 
         if (this.state.clicked) {
             //btn_class = "border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-100"
