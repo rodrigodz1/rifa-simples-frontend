@@ -56,19 +56,29 @@ class Cart extends Component {
         //(this.state.numbers).length * this.precoDaRifa = valor total a ser pago
         try {
             if (this.state.name != '' && (this.state.cel).length > 8 && (this.state.cel).length < 12) {
-                const response = await api.post('/tickets', {
-                    state: "reserved",
-                    number: this.props.valueFromParent[0],
-                    rifa: this.state.rifa_id,
-                    name: this.state.name,
-                    telefone: this.state.cel,
-                    //gambler_tickets: [response.data.id],
-                })
-                console.log(response);
-                if (response.data.status == 500) {
-                    //console.log('improve yourself');
-                    return;
+                const promises = []
+
+                for (let i = 0; i < (this.props.valueFromParent).length; i++) {
+                    promises.push(await api.post('/tickets', {
+                        state: "reserved",
+                        number: this.props.valueFromParent[i],
+                        rifa: this.state.rifa_id,
+                        name: this.state.name,
+                        telefone: this.state.cel,
+                        //gambler_tickets: [response.data.id],
+                    }))
                 }
+
+                Promise.all(promises)
+                    .then(numerosCadastrados => {
+                        console.log(numerosCadastrados);
+                    })
+
+                //console.log(response);
+                //if (response.data.status == 500) {
+                //console.log('improve yourself');
+                //    return;
+                //}
 
                 //await api.post('/gamblers', {
                 // [id do ticket]
