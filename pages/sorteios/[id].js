@@ -10,7 +10,7 @@ function Sorteio({ rifas }) {
             <Header name="INÍCIO" link="/" />
             <div className="">
 
-                <div className="grid grid-cols-2 mx-6">
+                <div className="grid grid-cols-1 mx-6">
                     <div className=" text-center m-2">
                         {rifas.name}
                         <div className="border border-black">imagem...</div>

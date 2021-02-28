@@ -59,16 +59,20 @@ class Cart extends Component {
                 const response = await api.post('/tickets', {
                     state: "reserved",
                     number: this.props.valueFromParent[0],
-                    rifa: this.state.rifa_id
-                })
-
-                console.log(response.data.id);
-
-                await api.post('/gamblers', {
+                    rifa: this.state.rifa_id,
                     name: this.state.name,
                     telefone: this.state.cel,
-                    gambler_tickets: [response.data.id], // [id do ticket]
+                    //gambler_tickets: [response.data.id],
                 })
+                console.log(response);
+                if (response.data.status == 500) {
+                    //console.log('improve yourself');
+                    return;
+                }
+
+                //await api.post('/gamblers', {
+                // [id do ticket]
+                //})
 
                 //alert('Um nome foi enviado: ' + this.state.name);
                 event.preventDefault();
