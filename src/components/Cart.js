@@ -106,26 +106,40 @@ class Cart extends Component {
         return (
             <div className={this.props.className}>
 
-                <div className="border-green-400 border-r-2 pr-2 pb-2">
+
+
+
+                <div className="">
                     <Form onSubmit={this.handleSubmit}>
-                        <Form.Field className="font-bold rounded-md bg-green-500">
-                            <Form.Input placeholder="Insira seu nome" label="Nome" name="name" value={this.state.name} onChange={this.handleChange} />
+                        <Form.Field className="font-bold text-white">
+                            <Form.Input className="" placeholder="Insira seu nome" label="Seu nome:" name="name" value={this.state.name} onChange={this.handleChange} />
                         </Form.Field>
-                        <Form.Field className="font-bold bg-green-500">
-                            <Form.Input className="" placeholder="Insira seu WhatsApp" label="WhatsApp" name="cel" value={this.state.cel} onChange={this.handleChange} />
+                        <Form.Field className="font-bold text-white">
+                            <Form.Input className="" placeholder="Insira seu WhatsApp" label="Seu WhatsApp:" name="cel" value={this.state.cel} onChange={this.handleChange} />
                         </Form.Field>
                         <Button className="mt-1 bg-yellow-500 text-white p-1 rounded-md" type="submit">Reservar número(s)</Button>
                     </Form>
                 </div>
+                <div className="">
+                    <h1 className="grid grid-cols-3 text-white shadow-xl mx-4"> {this.state.numbers.map(nm =>
+                        <div className="bg-black rounded-md p-1 m-1">
+                            {nm}
+                        </div>)}
 
-                <div className="border-green-400 border-l-2 pl-2 ">
-                    <h1 className="text-white ">Números: {this.state.numbers + " "} </h1>
-                    <p className="text-white">Total: R$ {(this.state.numbers).length * this.precoDaRifa}</p>
 
-
-
-                    <button onClick={_ => document.location.reload()} className="bg-black text-white ml-2 mb-2 p-1 rounded-md" >Limpar carrinho</button>
+                    </h1>
+                    <div>
+                        <p className="text-white font-bold">Total: {(this.state.numbers).length} x {this.precoDaRifa} = R$ {(this.state.numbers).length * this.precoDaRifa}</p>
+                        <button onClick={_ => document.location.reload()} className="bg-black text-white m-2 mb-2 p-1 rounded-md" >Limpar carrinho</button>
+                    </div>
                 </div>
+
+
+
+
+
+
+
 
 
 

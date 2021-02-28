@@ -31,7 +31,7 @@ class Button extends React.Component {
     }
 
     render() {
-        let btn_class = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900";
+        //let btn_class = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900";
         let btn_status = false;
         let btn_num = this.props.name
 

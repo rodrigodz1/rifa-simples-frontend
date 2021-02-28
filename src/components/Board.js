@@ -70,42 +70,45 @@ class Board extends Component {
         let className = ''
 
         return (
-            <div className={this.props.className}>
-                {
-                    this.state.Are_Numbers_Fetched ?
+            <div>
+                <div className={this.props.className}>
+                    {
+                        this.state.Are_Numbers_Fetched ?
 
-                        botoes.map((botao, i) => {
+                            botoes.map((botao, i) => {
 
-                            if (botao < 10) {
-                                botao = "00" + botao
-                            } else if (botao < 100 && botao > 9) {
-                                botao = "0" + botao
-                            }
+                                if (botao < 10) {
+                                    botao = "00" + botao
+                                } else if (botao < 100 && botao > 9) {
+                                    botao = "0" + botao
+                                }
 
-                            if (this.numbers.reserveds.includes(parseInt(botao))) {
-                                className = "bg-yellow-600 text-white m-2 rounded-md ";
-                                situation = 'reserved'
-                                fetch_num = botao
-                            } else if (this.numbers.paids.includes(parseInt(botao))) {
-                                className = "bg-red-600 text-white m-2 rounded-md ";
-                                situation = 'paid'
-                                fetch_num = botao
-                            } else {
-                                className = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900 shadow-xl";
-                                situation = 'available'
-                                fetch_num = botao
-                            }
-
-
-
-                            return <Button className={className} fetch_num={fetch_num} situation={situation} valueFromParent={this.state.value_key} functionCallFromParent={this.parentFunction.bind(this)} name={botao} />
-                        })
-
-                        : null
-                }
+                                if (this.numbers.reserveds.includes(parseInt(botao))) {
+                                    className = "bg-yellow-600 text-white m-2 rounded-md ";
+                                    situation = 'reserved'
+                                    fetch_num = botao
+                                } else if (this.numbers.paids.includes(parseInt(botao))) {
+                                    className = "bg-red-600 text-white m-2 rounded-md ";
+                                    situation = 'paid'
+                                    fetch_num = botao
+                                } else {
+                                    className = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900 shadow-xl";
+                                    situation = 'available'
+                                    fetch_num = botao
+                                }
 
 
-                { this.state.value_key != '' ? <Cart className="sticky flex w-screen justify-center bottom-0 text-center bg-green-800 pb-2 pt-2 align-center"
+
+                                return <Button className={className} fetch_num={fetch_num} situation={situation} valueFromParent={this.state.value_key} functionCallFromParent={this.parentFunction.bind(this)} name={botao} />
+                            })
+
+                            : null
+                    }
+
+
+
+                </div>
+                {this.state.value_key != '' ? <Cart className="grid grid-cols-1 sticky flex w-full bottom-0 text-center bg-green-700 pb-2 pt-2 "
                     functionCallFromParent={this.parentFunction.bind(this)}
                     valueFromParent={this.state.value_key}
                     rifa_id={this.state.rifa_id} /> : null}
