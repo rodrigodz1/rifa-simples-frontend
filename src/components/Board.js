@@ -8,7 +8,8 @@ class Board extends Component {
             value_key: [],
             Are_Numbers_Fetched: false,
             fetch_Numbers: this.props.tickets,
-            rifa_id: this.props.rifa_id
+            rifa_id: this.props.rifa_id,
+            ticket_price: this.props.ticket_price,
         }
 
         this.numbers = {
@@ -108,10 +109,11 @@ class Board extends Component {
 
 
                 </div>
-                {this.state.value_key != '' ? <Cart className="grid grid-cols-1 sticky flex w-full bottom-0 text-center bg-green-700 pb-2 pt-2 "
+                {this.state.value_key != '' ? <Cart className="grid grid-cols-1 sticky flex w-full bottom-0 text-center bg-green-600 pb-2 pt-2 "
                     functionCallFromParent={this.parentFunction.bind(this)}
                     valueFromParent={this.state.value_key}
-                    rifa_id={this.state.rifa_id} /> : null}
+                    rifa_id={this.state.rifa_id}
+                    ticket_price={this.state.ticket_price} /> : null}
             </div>
         );
     }
