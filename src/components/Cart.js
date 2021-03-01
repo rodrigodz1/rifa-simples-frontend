@@ -92,7 +92,7 @@ class Cart extends Component {
             }
 
         } catch (error) {
-            alert('erro oa inserir dados')
+            alert(error)
         }
 
     }
