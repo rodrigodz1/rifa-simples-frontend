@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React, { Component, useState } from 'react'
 import { Form, Button } from 'semantic-ui-react'
+import Router, { withRouter } from 'next/router'
 
 import api from '../../api/config'
 
@@ -86,7 +87,12 @@ class Cart extends Component {
 
                 //alert('Um nome foi enviado: ' + this.state.name);
                 event.preventDefault();
-                document.location.reload()
+
+                //return <Link passHref={true} href="/" />
+                //document.location.reload()
+                //location.assign('http://localhost:3000/')
+                //this.props.BoardCartCall(this.props.valueFromParent);
+                Router.push({ pathname: '/pagamento', query: { name: this.state.name, object: this.props.valueFromParent, price: this.precoDaRifa, rid: this.state.rifa_id } })
             } else {
                 alert('dados incorretos.....')
             }
@@ -122,13 +128,19 @@ class Cart extends Component {
 
 
                         </h1>
-                        <Button className="mt-1 bg-yellow-500 text-white p-1 rounded-md" type="submit">Reservar número(s)</Button>
+
+                        <Button className="mt-1 bg-yellow-500 text-white p-1 rounded-md" type="submit">
+                            Reservar número(s)
+                        </Button>
+
+
                     </Form>
                 </div>
                 <div>
                     <p className="text-white font-bold">Total: {(this.state.numbers).length} x {this.precoDaRifa} = R$ {(this.state.numbers).length * this.precoDaRifa}</p>
                     <button onClick={_ => document.location.reload()} className="bg-black text-white m-2 mb-2 p-1 rounded-md" >Limpar carrinho</button>
                 </div>
+
             </div >
         )
     }

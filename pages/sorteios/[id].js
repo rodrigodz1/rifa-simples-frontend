@@ -5,10 +5,26 @@ import Board from '../../src/components/Board'
 import api from '../../api/config'
 
 
-function Sorteio({ rifas }) {
+function Sorteio({ rifas, gamblers }) {
     const { API_URL } = process.env
 
+    //console.log(gamblers);
+    let reserved = 0;
+    let paid = 0;
+    let available = 1000;
+
+    rifas.rifa_tickets.map(item => {
+        if (item.state === 'reserved') {
+            reserved++
+        } else if (item.state === 'paid') {
+            paid++
+        }
+    })
+    available = available - (reserved + paid)
+
+
     return (
+
         <div>
             <Header name="INÍCIO" link="/" />
             <div className="">
@@ -25,16 +41,20 @@ function Sorteio({ rifas }) {
                     </div>
                 </div>
                 <div className="grid grid-cols-3 m-2">
-                    <button className="bg-green-600 text-white mx-1 p-1 font rounded-full">Disponíveis ()</button>
-                    <button className="bg-yellow-600 text-white mx-1 p-1 font rounded-full">Reservados ()</button>
-                    <button className="bg-red-600 text-white mx-1 p-1 font rounded-full">Pagos ()</button>
+
+                    <button title="" className=" bg-green-600 text-white mx-1 p-1 font rounded-full">Disponíveis ({available})</button>
+
+                    <button className="bg-yellow-600 text-white mx-1 p-1 font rounded-full">Reservados ({reserved})</button>
+                    <button className="bg-red-600 text-white mx-1 p-1 font rounded-full">Pagos ({paid})</button>
+
                 </div>
 
 
-                <Board className="bg-yellow-200 grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 rounded-md mx-4" tickets={rifas.rifa_tickets} rifa_id={rifas.id} ticket_price={rifas.ticket_price} />
+                <Board className="bg-yellow-200 grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 rounded-md mx-4" gamblers={gamblers} tickets={rifas.rifa_tickets} rifa_id={rifas.id} ticket_price={rifas.ticket_price} />
 
-                <div className="border border-black text-center my-20">possible footer</div>
+
             </div>
+            <div className="border border-black text-center my-20">maybe a footer</div>
         </div>
 
     )
@@ -49,12 +69,15 @@ export async function getServerSideProps(context) {
     const { API_URL } = process.env
 
     const res = await fetch(`${API_URL}/rifas/${id}`)
+    const gamblers = await fetch(`${API_URL}/gamblers`)
 
+    const data2 = await gamblers.json()
     const data = await res.json()
 
     return {
         props: {
-            rifas: data
+            rifas: data,
+            gamblers: data2
         },
     }
 }

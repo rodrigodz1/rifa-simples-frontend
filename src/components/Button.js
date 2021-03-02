@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Tippy from '@tippyjs/react'
 
 class Button extends React.Component {
     constructor(props) {
@@ -8,15 +9,14 @@ class Button extends React.Component {
             clicked: false,
             status: this.props.situation,
             number: this.props.fetch_num,
-            className: this.props.className
+            className: this.props.className,
+            tooltip: 'implementado em breve',
         }
 
         this.changeColor = this.changeColor.bind(this)
+
+
     }
-
-
-
-
 
     changeColor = (num) => {
         //num = parseInt(num)
@@ -42,7 +42,9 @@ class Button extends React.Component {
             btn_status = true
         }
 
-
+        if (this.state.status === 'available') {
+            this.state.tooltip = 'Disponível!'
+        }
 
         //console.log(this.props.fetch_num, this.props.situation);
         //if ((this.props.name == this.props.fetch_num) && (this.props.situation == 'reserved')) {
@@ -54,11 +56,12 @@ class Button extends React.Component {
         return (
 
             <>
+                <Tippy className="bg-black p-1 text-yellow-300 rounded-md" content={this.state.tooltip} duration={0} interactive={false} interactiveBorder={0} delay={0}>
+                    <button className={this.state.className} disabled={btn_status} onClick={() => this.changeColor(this.state.number)}  >
 
-                <button className={this.state.className} disabled={btn_status} onClick={() => this.changeColor(this.state.number)}  >
-
-                    {btn_num}
-                </button>
+                        {btn_num}
+                    </button>
+                </Tippy>
 
             </>
 

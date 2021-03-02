@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
+    "@tippyjs/react": "^4.2.1",
     "autoprefixer": "^10.0.4",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",

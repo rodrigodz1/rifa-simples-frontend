@@ -14,8 +14,18 @@ function Content({ router: { query } }) {
     const [conta, setConta] = useState()
     const [agencia, setAgencia] = useState()
 
+    //validar no backend
+    /*
+    1. A partir do número da rifa, verificar se os números escolhidos estão de fato reservados.
+    2. Verificar se o nome digitado realmente está no db
+    */
+    const rifa_id = (query.rid)
     const numbers = (query.object);
+    //const [numbers, setNumbers] = useState([query.object])
     const price = (query.price)
+    const name = (query.name)
+
+
 
     const Bank = (props) => {
         return (
@@ -41,11 +51,13 @@ function Content({ router: { query } }) {
             <Header name="INÍCIO" link="/" />
             <div className="">
 
-                <div className="grid grid-cols-2 mx-6 mt-8">
+                <div className="grid grid-cols-1 mx-6 mt-8">
 
-                    <PaymentDetails price={price} />
+
                     <div className="text-center pt-4">
-                        Escolha o Banco para fazer a transferência
+                        <p>Oi, {name}</p>
+                        escolha um método de pagamento
+                        em seguida nos envie o comprovante.
                         <div className="grid grid-cols-3 justify-between bg-yellow-100 py-12">
                             <Bank name="Nubank" owner="RODRIGO DE BRITO" account={[1234, 4321]} color="purple" />
                             <Bank name="Inter" owner="RODRIGO DE BRITO" account={[5678, 8765]} color="red" />
@@ -62,7 +74,11 @@ function Content({ router: { query } }) {
 
                     <div className="text-center m-2">
                         Números selecionados
-                        <div className="bg-black text-white">{numbers}</div>
+                        <div className="bg-black text-white">{
+                            numbers + " "
+                        }</div>
+                        Valor a transferir
+                        <div className="bg-yellow-300 text-black font-bold">R$ {price}</div>
                     </div>
 
                 </div>

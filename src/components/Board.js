@@ -1,6 +1,8 @@
+import { data } from 'autoprefixer';
 import React, { Component } from 'react';
 import Button from './Button';
 import Cart from './Cart';
+
 class Board extends Component {
     constructor(props) {
         super(props);
@@ -16,6 +18,8 @@ class Board extends Component {
             reserveds: [],
             paids: []
         }
+
+
     }
 
     async componentDidMount() {
@@ -48,6 +52,8 @@ class Board extends Component {
             this.setState({ value_key: this.state.value_key.concat(data_from_child) });
     }
 
+
+
     changeColor = (num) => {
         this.setState({ clicked: !this.state.clicked })
         console.log(num);
@@ -72,6 +78,7 @@ class Board extends Component {
 
         return (
             <div>
+
                 <div className={this.props.className}>
                     {
                         this.state.Are_Numbers_Fetched ?
@@ -100,7 +107,7 @@ class Board extends Component {
 
 
 
-                                return <Button className={className} fetch_num={fetch_num} situation={situation} valueFromParent={this.state.value_key} functionCallFromParent={this.parentFunction.bind(this)} name={botao} />
+                                return <Button ticket_info={this.state.fetch_Numbers} gambler_info={this.props.gamblers} className={className} fetch_num={fetch_num} situation={situation} valueFromParent={this.state.value_key} functionCallFromParent={this.parentFunction.bind(this)} name={botao} />
                             })
 
                             : null
@@ -110,10 +117,14 @@ class Board extends Component {
 
                 </div>
                 {this.state.value_key != '' ? <Cart className="grid grid-cols-1 sticky flex w-full bottom-0 text-center bg-green-600 pb-2 pt-2 "
-                    functionCallFromParent={this.parentFunction.bind(this)}
+
                     valueFromParent={this.state.value_key}
                     rifa_id={this.state.rifa_id}
                     ticket_price={this.state.ticket_price} /> : null}
+
+
+
+
             </div>
         );
     }
