@@ -92,7 +92,8 @@ class Cart extends Component {
                 //document.location.reload()
                 //location.assign('http://localhost:3000/')
                 //this.props.BoardCartCall(this.props.valueFromParent);
-                Router.push({ pathname: '/pagamento', query: { name: this.state.name, object: this.props.valueFromParent, price: this.precoDaRifa, rid: this.state.rifa_id } })
+                //console.log(this.props.valueFromParent);
+                Router.push({ pathname: '/pagamento', query: { name: this.state.name, object: this.props.valueFromParent, price: (this.precoDaRifa) * (this.props.valueFromParent).length, rid: this.state.rifa_id } })
             } else {
                 alert('dados incorretos.....')
             }
