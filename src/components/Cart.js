@@ -17,6 +17,7 @@ class Cart extends Component {
             rifa_id: parseInt(this.props.rifa_id)
         }
 
+
         this.precoDaRifa = this.props.ticket_price
 
         this.showCart = this.showCart.bind(this)
@@ -70,10 +71,22 @@ class Cart extends Component {
                     }))
                 }
 
-                Promise.all(promises)
-                    .then(numerosCadastrados => {
-                        console.log(numerosCadastrados);
-                    })
+                var numerosCadastrados = Promise.all(promises);
+                let ticket_begin = ''
+                let ticket_end = ''
+                let ticket_number = '';
+                (await numerosCadastrados).map((tmp, i) => {
+                    let tam = ((tmp.data.gambler_tickets).length)
+                    if (i == 0) {
+                        ticket_begin = tmp.data.gambler_tickets[tam - 1].id
+                    }
+                    ticket_end = tmp.data.gambler_tickets[tam - 1].id
+                    //console.log(ticket_number);
+                })
+                let tam = (await numerosCadastrados).length
+                ticket_number = (ticket_begin + ticket_end) + '-' + tam
+                //let id_pedido = (numerosCadastrados[0].data.gambler_tickets).length
+                //let ticket_number = numerosCadastrados[0].data.gambler_tickets[id_pedido - 1].id
 
                 //console.log(response);
                 //if (response.data.status == 500) {
@@ -93,7 +106,7 @@ class Cart extends Component {
                 //location.assign('http://localhost:3000/')
                 //this.props.BoardCartCall(this.props.valueFromParent);
                 //console.log(this.props.valueFromParent);
-                Router.push({ pathname: '/pagamento', query: { name: this.state.name, object: this.props.valueFromParent, price: (this.precoDaRifa) * (this.props.valueFromParent).length, rid: this.state.rifa_id } })
+                Router.push({ pathname: '/pagamento', query: { name: this.state.name, object: this.props.valueFromParent, price: (this.precoDaRifa) * (this.props.valueFromParent).length, tid: ticket_number } })
             } else {
                 alert('dados incorretos.....')
             }

@@ -19,7 +19,7 @@ function Content({ router: { query } }) {
     1. A partir do número da rifa, verificar se os números escolhidos estão de fato reservados.
     2. Verificar se o nome digitado realmente está no db
     */
-    const rifa_id = (query.rid)
+    const id = (query.tid)
     const numbers = (query.object);
     //const [numbers, setNumbers] = useState([query.object])
     const price = (query.price)
@@ -58,6 +58,9 @@ function Content({ router: { query } }) {
                         <p>Oi, {name}</p>
                         escolha um método de pagamento
                         em seguida nos envie o comprovante.
+                        <div className="text-center bg-green-200 font-bold">
+                            Pedido número: #{id}
+                        </div>
                         <div className="grid grid-cols-3 justify-between bg-yellow-100 py-12">
                             <Bank name="Nubank" owner="RODRIGO DE BRITO" account={[1234, 4321]} color="purple" />
                             <Bank name="Inter" owner="RODRIGO DE BRITO" account={[5678, 8765]} color="red" />
@@ -72,13 +75,17 @@ function Content({ router: { query } }) {
                         </div> : null}
                     </div>
 
+
+
                     <div className="text-center m-2">
                         Números selecionados
                         <div className="bg-black text-white">{
                             numbers + " "
                         }</div>
+
                         Valor a transferir
                         <div className="bg-yellow-300 text-black font-bold">R$ {price}</div>
+
                     </div>
 
                 </div>
