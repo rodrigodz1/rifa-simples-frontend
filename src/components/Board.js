@@ -19,7 +19,10 @@ class Board extends Component {
             paids: []
         }
 
-        this.owner = ''
+        this.owner = [{
+            name: '',
+            number: ''
+        }]
 
 
     }
@@ -41,13 +44,15 @@ class Board extends Component {
             if (this.state.fetch_Numbers[i].state === 'reserved') {
 
                 let tmp = this.state.fetch_Numbers[i].gambler
-                this.owner = (this.props.gamblers.find(x => x.id === tmp)).name;
+                this.owner.push({ name: (this.props.gamblers.find(x => x.id === tmp)).name, number: this.state.fetch_Numbers[i].number });
+                //console.log(this.owner);
                 this.numbers.reserveds.push(this.state.fetch_Numbers[i].number);
 
             } else if (this.state.fetch_Numbers[i].state === 'paid') {
 
                 let tmp = this.state.fetch_Numbers[i].gambler
-                this.owner = (this.props.gamblers.find(x => x.id === tmp)).name;
+                this.owner.push({ name: (this.props.gamblers.find(x => x.id === tmp)).name, number: this.state.fetch_Numbers[i].number });
+                //console.log(this.owner);
                 this.numbers.paids.push(this.state.fetch_Numbers[i].number);
 
             }
@@ -56,6 +61,7 @@ class Board extends Component {
             //this.state.fetch_Numbers[i].state == 'paid' ? this.numbers.paids.push(this.state.fetch_Numbers[i].number) : null
 
         }
+        //console.log(this.owner);
         //console.log(this.numbers.reserveds.includes(200));
         this.setState({ Are_Numbers_Fetched: true })
         //console.log(this.state.fetch_Numbers[1].number);
@@ -101,6 +107,7 @@ class Board extends Component {
                         this.state.Are_Numbers_Fetched ?
 
                             botoes.map((botao, i) => {
+                                //let count = 0
 
                                 if (botao < 10) {
                                     botao = "00" + botao
@@ -111,6 +118,7 @@ class Board extends Component {
                                 if (this.numbers.reserveds.includes(parseInt(botao))) {
                                     className = "bg-yellow-600 text-white m-2 rounded-md ";
                                     situation = 'reserved'
+                                    //console.log(count);
                                     fetch_num = botao
                                 } else if (this.numbers.paids.includes(parseInt(botao))) {
                                     className = "bg-red-600 text-white m-2 rounded-md ";
@@ -122,8 +130,7 @@ class Board extends Component {
                                     fetch_num = botao
                                 }
 
-
-
+                                //console.log(i);
                                 return <Button owner={this.owner} className={className} fetch_num={fetch_num} situation={situation} valueFromParent={this.state.value_key} functionCallFromParent={this.parentFunction.bind(this)} name={botao} />
                             })
 
