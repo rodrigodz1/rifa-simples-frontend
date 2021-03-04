@@ -19,6 +19,8 @@ class Board extends Component {
             paids: []
         }
 
+        this.owner = ''
+
 
     }
 
@@ -32,11 +34,26 @@ class Board extends Component {
         //this.setState({ fetch_Numbers: this.props.tickets })
 
         //console.log(this.state.fetch_Numbers);
+        //console.log(this.props.gamblers);
 
         for (let i = 0; i < this.state.fetch_Numbers.length; i++) {
 
-            this.state.fetch_Numbers[i].state == 'reserved' ? this.numbers.reserveds.push(this.state.fetch_Numbers[i].number) : null
-            this.state.fetch_Numbers[i].state == 'paid' ? this.numbers.paids.push(this.state.fetch_Numbers[i].number) : null
+            if (this.state.fetch_Numbers[i].state === 'reserved') {
+
+                let tmp = this.state.fetch_Numbers[i].gambler
+                this.owner = (this.props.gamblers.find(x => x.id === tmp)).name;
+                this.numbers.reserveds.push(this.state.fetch_Numbers[i].number);
+
+            } else if (this.state.fetch_Numbers[i].state === 'paid') {
+
+                let tmp = this.state.fetch_Numbers[i].gambler
+                this.owner = (this.props.gamblers.find(x => x.id === tmp)).name;
+                this.numbers.paids.push(this.state.fetch_Numbers[i].number);
+
+            }
+
+            //this.state.fetch_Numbers[i].state == 'reserved' ? this.numbers.reserveds.push(this.state.fetch_Numbers[i].number) : null
+            //this.state.fetch_Numbers[i].state == 'paid' ? this.numbers.paids.push(this.state.fetch_Numbers[i].number) : null
 
         }
         //console.log(this.numbers.reserveds.includes(200));
@@ -107,7 +124,7 @@ class Board extends Component {
 
 
 
-                                return <Button ticket_info={this.state.fetch_Numbers} gambler_info={this.props.gamblers} className={className} fetch_num={fetch_num} situation={situation} valueFromParent={this.state.value_key} functionCallFromParent={this.parentFunction.bind(this)} name={botao} />
+                                return <Button owner={this.owner} className={className} fetch_num={fetch_num} situation={situation} valueFromParent={this.state.value_key} functionCallFromParent={this.parentFunction.bind(this)} name={botao} />
                             })
 
                             : null

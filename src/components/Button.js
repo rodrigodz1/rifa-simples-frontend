@@ -10,7 +10,7 @@ class Button extends React.Component {
             status: this.props.situation,
             number: this.props.fetch_num,
             className: this.props.className,
-            tooltip: 'implementado em breve',
+            tooltip: '',
         }
 
         this.changeColor = this.changeColor.bind(this)
@@ -42,8 +42,10 @@ class Button extends React.Component {
             btn_status = true
         }
 
-        if (this.state.status === 'available') {
-            this.state.tooltip = 'Disponível!'
+        if (this.state.status === 'reserved') {
+            this.state.tooltip = 'Reservado por ' + this.props.owner
+        } else if (this.state.status === 'paid') {
+            this.state.tooltip = 'Comprado por ' + this.props.owner
         }
 
         //console.log(this.props.fetch_num, this.props.situation);
@@ -56,7 +58,7 @@ class Button extends React.Component {
         return (
 
             <>
-                <Tippy className="bg-black p-1 text-yellow-300 rounded-md" content={this.state.tooltip} duration={0} interactive={false} interactiveBorder={0} delay={0}>
+                <Tippy className="bg-black p-1 text-yellow-300 rounded-md" content={this.state.tooltip} duration={0} interactive={false} interactiveBorder={0} delay={0} touch={false}>
                     <button className={this.state.className} disabled={btn_status} onClick={() => this.changeColor(this.state.number)}  >
 
                         {btn_num}
