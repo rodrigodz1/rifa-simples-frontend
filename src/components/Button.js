@@ -10,6 +10,7 @@ class Button extends React.Component {
             status: this.props.situation,
             number: this.props.fetch_num,
             className: this.props.className,
+            onwer: this.props.owner,
             tooltip: '',
             tooltipClass: ''
         }
@@ -44,10 +45,10 @@ class Button extends React.Component {
         }
 
         if (this.state.status === 'reserved') {
-            this.state.tooltip = 'Reservado por ' + this.props.owner
+            this.state.tooltip = 'Reservado por ' + this.state.owner
             this.state.tooltipClass = 'bg-black p-1 text-yellow-300 rounded-md'
         } else if (this.state.status === 'paid') {
-            this.state.tooltip = 'Comprado por ' + this.props.owner
+            this.state.tooltip = 'Comprado por ' + this.state.owner
             this.state.tooltipClass = 'bg-black p-1 text-white rounded-md'
         }
         //console.log(this.props.fetch_num, this.props.situation);
