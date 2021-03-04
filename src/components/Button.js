@@ -60,7 +60,7 @@ class Button extends React.Component {
         return (
 
             <>
-                <Tippy className={this.state.tooltipClass} content={this.state.tooltip} duration={0} interactive={false} interactiveBorder={0} delay={0} trigger="mouseenter">
+                <Tippy className={this.state.tooltipClass} content={this.state.tooltip} duration={0} interactive={false} interactiveBorder={0} delay={0} touch={["hold", 0]}>
                     <button className={this.state.className} disabled={btn_status} onClick={() => this.changeColor(this.state.number)}  >
 
                         {btn_num}
