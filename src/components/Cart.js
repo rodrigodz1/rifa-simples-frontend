@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { Component, useState } from 'react'
 import { Form, Button } from 'semantic-ui-react'
 import Router, { withRouter } from 'next/router'
+import parsePhoneNumber, { isValidNumber, isValidPhoneNumber, AsYouType } from 'libphonenumber-js'
 
 import api from '../../api/config'
 
@@ -44,20 +45,28 @@ class Cart extends Component {
     }
 
     handleChange = (e, { name, value }) => {
-        //console.log(name, value)
-        this.setState({ [name]: value })
+        if (name === 'name') {
+            this.setState({ [name]: value })
+        } else if ((name === 'cel') && (value.length <= 15)) {
+            this.setState({ [name]: new AsYouType('BR').input(value) })
+        }
+        console.log(isValidPhoneNumber(this.state.cel, 'BR'));
     }
 
     handleSubmit = async (event) => {
         //const response = await api.get('/rifas');
         //console.log(response);
-
+        //const phoneNumber = parsePhoneNumber(this.state.cel, 'BR')
+        //console.log(phoneNumber);
         //this.state.name = nome
         //this.state.cel = whatsapp
         //this.props.valueFromParent = array com os numeros escolhidos
         //(this.state.numbers).length * this.precoDaRifa = valor total a ser pago
+        //(this.state.cel).length > 8 && (this.state.cel).length < 12
+
+
         try {
-            if (this.state.name != '' && (this.state.cel).length > 8 && (this.state.cel).length < 12) {
+            if (this.state.name != '' && isValidPhoneNumber(this.state.cel, 'BR')) {
                 const promises = []
 
                 for (let i = 0; i < (this.props.valueFromParent).length; i++) {
@@ -112,7 +121,7 @@ class Cart extends Component {
             }
 
         } catch (error) {
-            alert(error)
+            alert(error.message)
         }
 
     }
@@ -131,9 +140,10 @@ class Cart extends Component {
                         <Form.Field className="font-bold ">
                             <Form.Input className="" placeholder="Insira seu nome" label="Seu nome:" name="name" value={this.state.name} onChange={this.handleChange} />
                         </Form.Field>
-                        <Form.Field className="font-bold">
+                        <Form.Field max={15} type="number" className="font-bold">
                             <Form.Input className="" placeholder="Insira seu WhatsApp" label="Seu WhatsApp:" name="cel" value={this.state.cel} onChange={this.handleChange} />
                         </Form.Field>
+
 
                         <h1 className="grid grid-cols-3 text-white shadow-xl mx-4"> {this.state.numbers.map(nm =>
                             <div className="bg-black rounded-md p-1 m-1">
