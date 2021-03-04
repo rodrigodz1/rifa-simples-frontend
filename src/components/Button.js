@@ -10,7 +10,7 @@ class Button extends React.Component {
             status: this.props.situation,
             number: this.props.fetch_num,
             className: this.props.className,
-            onwer: this.props.owner,
+            owner: this.props.owner,
             tooltip: '',
             tooltipClass: ''
         }
