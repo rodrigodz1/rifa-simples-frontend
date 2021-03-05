@@ -44,15 +44,19 @@ class Board extends Component {
             if (this.state.fetch_Numbers[i].state === 'reserved') {
 
                 let tmp = this.state.fetch_Numbers[i].gambler
-                this.owner.push({ name: (this.props.gamblers.find(x => x.id === tmp)).name, number: this.state.fetch_Numbers[i].number });
-                //console.log(this.owner);
+                if ((this.props.gamblers.find(x => x.id === tmp)).name) {
+                    this.owner.push({ name: (this.props.gamblers.find(x => x.id === tmp)).name, number: this.state.fetch_Numbers[i].number });
+
+                }
                 this.numbers.reserveds.push(this.state.fetch_Numbers[i].number);
 
             } else if (this.state.fetch_Numbers[i].state === 'paid') {
 
                 let tmp = this.state.fetch_Numbers[i].gambler
-                this.owner.push({ name: (this.props.gamblers.find(x => x.id === tmp)).name, number: this.state.fetch_Numbers[i].number });
-                //console.log(this.owner);
+                if ((this.props.gamblers.find(x => x.id === tmp)).name) {
+                    this.owner.push({ name: (this.props.gamblers.find(x => x.id === tmp)).name, number: this.state.fetch_Numbers[i].number });
+
+                }
                 this.numbers.paids.push(this.state.fetch_Numbers[i].number);
 
             }

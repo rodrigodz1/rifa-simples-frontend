@@ -64,9 +64,9 @@ class Cart extends Component {
         //(this.state.numbers).length * this.precoDaRifa = valor total a ser pago
         //(this.state.cel).length > 8 && (this.state.cel).length < 12
 
-
+        //console.log('i got here');
         try {
-            if (this.state.name != '' && isValidPhoneNumber(this.state.cel, 'BR')) {
+            if ((this.state.name != '') && (isValidPhoneNumber(this.state.cel, 'BR'))) {
                 const promises = []
 
                 for (let i = 0; i < (this.props.valueFromParent).length; i++) {
@@ -79,7 +79,7 @@ class Cart extends Component {
                         //gambler_tickets: [response.data.id],
                     }))
                 }
-
+                //console.log('i maybe got here');
                 var numerosCadastrados = Promise.all(promises);
                 let ticket_begin = ''
                 let ticket_end = ''
