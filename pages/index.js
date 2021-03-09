@@ -14,18 +14,20 @@ function Home({ rifas }) {
   })
 
   const carrousel = images.map(function (img) {
-    return <div className="bg-black mt-2">
-      <img src={`${API_URL}${img}`} />
+    return <div className="mt-2">
+      <img className="" src={`${API_URL}${img}`} width={400} height={700} />
     </div>
   })
 
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000
   };
 
   return (
@@ -38,12 +40,14 @@ function Home({ rifas }) {
 
       </Head>
       <Header name="SORTEIOS" link="sorteios" />
-      <body className="flex flex-col position-absolute">
-
-
+      <div className="bg-gray-800 mx-1 ">
         <Slider {...settings}>
           {carrousel}
         </Slider>
+      </div>
+      <body className="flex flex-col position-absolute">
+
+
         <Content />
 
 
