@@ -13,7 +13,7 @@ class MyDocument extends Document {
 				<title>HPO - Hiper Prêmios Online</title>
 				<Head>
 
-					<link rel="icon" href="/clover.svg" />
+					<link rel="icon" href="/rabbit.jpg" />
 					<link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
 					<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />

@@ -5,7 +5,11 @@ import Footer from '../src/components/Footer'
 import React from 'react'
 import Slider from 'react-slick';
 
+
 function Home({ rifas }) {
+
+
+
   const { API_URL } = process.env
 
   const images = []
@@ -32,6 +36,8 @@ function Home({ rifas }) {
 
   return (
     <div className="">
+
+
       <Header name="SORTEIOS" link="sorteios" />
       <div className="bg-gray-800">
 
@@ -40,8 +46,8 @@ function Home({ rifas }) {
         </Slider>
       </div>
       <body className="flex flex-col position-absolute">
-
         <Content />
+
         <Footer />
 
       </body>
