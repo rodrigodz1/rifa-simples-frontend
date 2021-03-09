@@ -10,11 +10,11 @@ function Home({ rifas }) {
 
   const images = []
   rifas.map(item => {
-    images.push(item.image.formats.thumbnail.url)
+    images.push(item.image.formats.small.url)
   })
 
   const carrousel = images.map(function (img) {
-    return <div className="mt-2">
+    return <div className="">
       <img className="" src={`${API_URL}${img}`} width={400} height={700} />
     </div>
   })
@@ -32,25 +32,16 @@ function Home({ rifas }) {
 
   return (
     <div className="">
-      <Head>
-        <title>Dream Draw - Faça sua aposta</title>
-        <link rel="icon" href="/clover.svg" />
-        <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-
-      </Head>
       <Header name="SORTEIOS" link="sorteios" />
-      <div className="bg-gray-800 mx-1 ">
+      <div className="bg-gray-800">
+
         <Slider {...settings}>
           {carrousel}
         </Slider>
       </div>
       <body className="flex flex-col position-absolute">
 
-
         <Content />
-
-
         <Footer />
 
       </body>
@@ -66,7 +57,7 @@ export async function getServerSideProps() {
   const res = await fetch(`${API_URL}/rifas`)
 
   const data = await res.json()
-  console.log(data);
+  //console.log(data);
   return {
     props: {
       rifas: data,

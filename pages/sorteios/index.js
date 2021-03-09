@@ -11,7 +11,7 @@ function Content({ rifas }) {
 
     return (
         <div>
-            <Header name="INÍCIO" link="/" />
+            <Header />
 
             <div className="grid grid-cols-1 justify-center">
                 {

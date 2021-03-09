@@ -100,22 +100,4 @@ function Content({ router: { query } }) {
     )
 }
 
-export async function getStaticProps() {
-    const res = await fetch(`http://api-dc.herokuapp.com/raffle`)
-    const raffles = await res.json()
-
-
-    if (!raffles) {
-        return {
-            notFound: true,
-        }
-    }
-
-    return {
-        props: {
-            raffles,
-        }, // will be passed to the page component as props
-    }
-}
-
 export default withRouter(Content);
