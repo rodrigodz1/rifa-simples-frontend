@@ -15,7 +15,8 @@ class Cart extends Component {
             numbers: [],
             name: '',
             cel: '',
-            rifa_id: parseInt(this.props.rifa_id)
+            rifa_id: parseInt(this.props.rifa_id),
+            reservedWasClicked: false
         }
 
 
@@ -28,6 +29,12 @@ class Cart extends Component {
         this.makeReserve = this.makeReserve.bind(this)
 
 
+    }
+
+    simpleSvg = () => {
+        <svg className=" animate-spin h-5 w-5 mr-3">
+            <circle cx="1" cy="1" r="4" stroke="white" stroke-width="5" fill="none" />
+        </svg>
     }
 
     showCart = () => {
@@ -54,6 +61,7 @@ class Cart extends Component {
     }
 
     handleSubmit = async (event) => {
+        this.setState({ reservedWasClicked: true })
         //const response = await api.get('/rifas');
         //console.log(response);
         //const phoneNumber = parsePhoneNumber(this.state.cel, 'BR')
@@ -117,10 +125,13 @@ class Cart extends Component {
                 //console.log(this.props.valueFromParent);
                 Router.push({ pathname: '/pagamento', query: { name: this.state.name, object: this.props.valueFromParent, price: (this.precoDaRifa) * (this.props.valueFromParent).length, tid: ticket_number } })
             } else {
+                this.setState({ reservedWasClicked: false })
                 alert('dados incorretos.....')
+
             }
 
         } catch (error) {
+            this.setState({ reservedWasClicked: false })
             alert(error.message)
         }
 
@@ -153,8 +164,16 @@ class Cart extends Component {
 
                         </h1>
 
-                        <Button className="mt-1 bg-yellow-500 text-white p-1 rounded-md" type="submit">
-                            Reservar número(s)
+                        <Button className="mt-1 bg-yellow-500 text-white p-1 rounded-md" type="submit" disabled={this.state.reservedWasClicked}>
+                            <div className="flex">
+                                {
+                                    this.state.reservedWasClicked ? <svg className=" animate-spin h-5 w-5 mr-3">
+                                        <circle cx="1" cy="1" r="4" stroke="white" stroke-width="5" fill="none" />
+                                    </svg> : null
+                                }
+                                <span>Reservar número(s)</span>
+                            </div>
+
                         </Button>
 
 

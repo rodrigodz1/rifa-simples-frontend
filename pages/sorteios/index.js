@@ -9,6 +9,8 @@ import React from 'react'
 
 function Content({ rifas }) {
 
+
+
     return (
         <div>
             <Header />

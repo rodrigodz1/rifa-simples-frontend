@@ -4,7 +4,7 @@ import Footer from '../../src/components/Footer'
 import fetch from 'isomorphic-unfetch'
 import SorteioCard from '../../src/components/SorteioCard'
 
-import React from 'react'
+import React, { useState } from 'react'
 
 
 function Content({ rifas }) {
@@ -12,8 +12,12 @@ function Content({ rifas }) {
     return (
         <div>
             <Header />
+            <button className="flex bg-black place-self-center text-white m-5 p-5 rounded-md" >
+                <svg className="animate-spin h-5 w-5 mr-3">
+                    <circle r="15" stroke="white" stroke-width="5" fill="black" />
+                </svg>
+                Being built.</button>
 
-            <h1>Being built.</h1>
         </div>
 
     )

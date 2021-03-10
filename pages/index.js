@@ -8,8 +8,6 @@ import Slider from 'react-slick';
 
 function Home({ rifas }) {
 
-
-
   const { API_URL } = process.env
 
   const images = []
@@ -51,7 +49,6 @@ function Home({ rifas }) {
         <Footer />
 
       </body>
-
     </div>
 
   )
@@ -60,6 +57,7 @@ function Home({ rifas }) {
 
 export async function getServerSideProps() {
   const { API_URL } = process.env
+
   const res = await fetch(`${API_URL}/rifas`)
 
   const data = await res.json()
