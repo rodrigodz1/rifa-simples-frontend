@@ -11,7 +11,7 @@ const Header = (props) => {
 			{/*<a href="#">
 				Hiper Prêmios Online
 			</a>*/}
-			<img src="/rabbit.jpg" width={60} height={40} href="/" className="rounded" />
+			<img src="/corte.png" width={60} height={40} href="/" className="rounded" />
 
 
 			<button
