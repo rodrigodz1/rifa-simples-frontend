@@ -14,6 +14,11 @@ function Content({ router: { query } }) {
     const [conta, setConta] = useState()
     const [agencia, setAgencia] = useState()
 
+    const [nubank, setNubank] = useState(false)
+    const [bancodobrasil, setBancodobrasil] = useState(false)
+    const [pix, setPix] = useState(false)
+    const [picpay, setPicpay] = useState(false)
+
     //validar no backend
     /*
     1. A partir do número da rifa, verificar se os números escolhidos estão de fato reservados.
@@ -24,31 +29,6 @@ function Content({ router: { query } }) {
     //const [numbers, setNumbers] = useState([query.object])
     const price = (query.price)
     const name = (query.name)
-
-
-
-    const Bank = (props) => {
-        return (
-            <div className="">
-                <button onClick={() => {
-                    if (!isBankInfoVisible) {
-                        setIsBankInfoVisible(true)
-                        setAgencia(props.account[1])
-                        setConta(props.account[0])
-                        setTitular(props.owner)
-                        setBanco(props.name)
-
-                    }
-                    else {
-                        setIsBankInfoVisible(false)
-                    }
-                }} className={"shadow-xl p-2 rounded-md mx-1 text-black font-bold hover:bg-yellow-300"}>
-
-                    <img className={props.padding + ""} src={props.img} />
-                </button>
-            </div>
-        )
-    }
 
     return (
         <div>
@@ -65,11 +45,73 @@ function Content({ router: { query } }) {
                         <div className="text-center bg-green-200 font-bold">
                             Pedido número: #{id}
                         </div>
-                        <div className="grid grid-cols-4 justify-between bg-yellow-100 py-12">
-                            <Bank name="Nubank" img="/nb.png" owner="RODRIGO DE BRITO" account={[1234, 4321]} />
+                        <div className="bg-yellow-100 py-6">
+                            <div className="flex flex-col ">
+
+                                <button onClick={
+                                    () => {
+                                        setNubank(!nubank)
+                                        setBancodobrasil(false)
+                                        setPix(false)
+                                        setPicpay(false)
+                                    }
+                                } className="inline-flex mx-14 border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/nb.png" height={80} width={80} /><span className="font-bold flex-1  place-self-center">Nubank</span></button>
+                                {
+                                    nubank ? <div className=" text-left pl-10 bg-yellow-200"><p>Nubank:</p>
+                                        <p>Agência: 0001</p>
+                                        <p>Conta: 25085155-6</p>
+                                        <p>Nome: FELIPE V MACHADO</p>
+                                    </div> : null
+                                }
+                                <button onClick={
+                                    () => {
+                                        setNubank(false)
+                                        setBancodobrasil(!bancodobrasil)
+                                        setPix(false)
+                                        setPicpay(false)
+                                    }
+                                } className="inline-flex mx-14 border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/bb.png" height={80} width={80} /><span className="font-bold  flex-1  place-self-center">Banco do Brasil</span></button>
+                                {
+                                    bancodobrasil ? <div className="text-left pl-10 bg-yellow-200">
+                                        <p>BB</p>
+                                        <p>Agência: 1777-9</p>
+                                        <p>Conta: 18319-9</p>
+                                        <p>FELIPE V MACHADO</p>
+                                    </div> : null
+                                }
+                                <button onClick={
+                                    () => {
+                                        setNubank(false)
+                                        setBancodobrasil(false)
+                                        setPix(!pix)
+                                        setPicpay(false)
+                                    }
+                                } className="inline-flex mx-14 border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/pix.png" height={80} width={80} /><span className="font-bold  flex-1  place-self-center">Pix</span></button>
+                                {
+                                    pix ? <div className="bg-yellow-200">
+                                        <p>Chave PIX, email: </p>
+                                        <p className="font-bold">epilef231veras@gmail.com</p>
+                                        <p>Transferir à: FELIPE V MACHADO</p>
+                                    </div> : null
+                                }
+                                <button onClick={
+                                    () => {
+                                        setNubank(false)
+                                        setBancodobrasil(false)
+                                        setPix(false)
+                                        setPicpay(!picpay)
+                                    }
+                                } className="inline-flex mx-14 border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/pp.png" height={80} width={80} /><span className="font-bold  flex-1  place-self-center">PicPay</span></button>
+                                {
+                                    picpay ? <div className="bg-yellow-200"> picpay </div> : null
+                                }
+
+                            </div>
+
+                            {/*<Bank name="Nubank" img="/nb.png" owner="RODRIGO DE BRITO" account={[1234, 4321]} />
                             <Bank name="Banco do Brasil" padding="pt-3" img="/bb.png" owner="RODRIGO DE BRITO" account={[91011, 11109]} />
                             <Bank name="PIX" img="/pix.png" owner="RODRIGO DE BRITO" account={[91011, 11109]} />
-                            <Bank name="PicPay" padding="pt-3" img="/pp.png" owner="RODRIGO DE BRITO" account={[91011, 11109]} />
+    <Bank name="PicPay" padding="pt-3" img="/pp.png" owner="RODRIGO DE BRITO" account={[91011, 11109]} />*/}
 
                         </div>
                         {isBankInfoVisible ? <div className="bg-yellow-200 pl-24 text-left">
