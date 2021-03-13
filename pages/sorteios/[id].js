@@ -27,9 +27,9 @@ function Sorteio({ rifas, gamblers }) {
 
         <div>
             <Header name="INÍCIO" link="/" />
-            <div className="">
+            <div className="bg-black"> {/*bg-black*/}
 
-                <div className="grid grid-cols-1 mx-6">
+                <div className="grid grid-cols-1 mx-6 text-white"> {/*text-white*/}
                     <div className="font-bold text-center m-2 place-self-center">
                         {rifas.name}
                         <div className="border border-black ">
