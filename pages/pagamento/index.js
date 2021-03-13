@@ -103,7 +103,11 @@ function Content({ router: { query } }) {
                                     }
                                 } className="inline-flex mx-14 border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/pp.png" height={80} width={80} /><span className="font-bold  flex-1  place-self-center">PicPay</span></button>
                                 {
-                                    picpay ? <div className="bg-yellow-200"> picpay </div> : null
+                                    picpay ? <div className="bg-yellow-200">
+                                        <p className="">Acesse o link <a className="text-blue-500" href='https://picpay.me/felipeverasm'>https://picpay.me/felipeverasm</a></p>
+                                        ou pelo QRCode abaixo:
+                                        <img src="/ppF.jpeg" />
+                                    </div> : null
                                 }
 
                             </div>
