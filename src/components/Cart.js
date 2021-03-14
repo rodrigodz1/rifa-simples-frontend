@@ -57,7 +57,7 @@ class Cart extends Component {
         } else if ((name === 'cel') && (value.length <= 15)) {
             this.setState({ [name]: new AsYouType('BR').input(value) })
         }
-        console.log(isValidPhoneNumber(this.state.cel, 'BR'));
+        //console.log(isValidPhoneNumber(this.state.cel, 'BR'));
     }
 
     handleSubmit = async (event) => {
@@ -126,13 +126,13 @@ class Cart extends Component {
                 Router.push({ pathname: '/pagamento', query: { name: this.state.name, object: this.props.valueFromParent, price: (this.precoDaRifa) * (this.props.valueFromParent).length, tid: ticket_number } })
             } else {
                 this.setState({ reservedWasClicked: false })
-                alert('dados incorretos.....')
+                alert('O número digitado não é válido.')
 
             }
 
         } catch (error) {
             this.setState({ reservedWasClicked: false })
-            alert(error.message)
+            alert('Um dos números que você tentou reservar se encontra reservado.\nPor favor, atualize a página.')
         }
 
     }

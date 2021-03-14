@@ -83,7 +83,7 @@ class Board extends Component {
 
     changeColor = (num) => {
         this.setState({ clicked: !this.state.clicked })
-        console.log(num);
+        //console.log(num);
     }
 
 
