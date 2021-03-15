@@ -38,12 +38,12 @@ function Content({ router: { query } }) {
                 <div className="grid grid-cols-1 mx-6 mt-8">
 
 
-                    <div className="text-center pt-4">
+                    <div className="text-center pt-4 bg-green-100 rounded-md">
                         <p>Oi, {name}</p>
 
 
 
-                        <div className="text-center bg-green-200 font-bold">
+                        <div className="text-center text-red-600 bg-green-200">
                             Pedido número: #{id}
                         </div>
                         <div className="text-center m-2">
@@ -56,7 +56,7 @@ function Content({ router: { query } }) {
                         <div className="bg-yellow-300 text-black font-bold">R$ {price}</div>
 
                         </div>
-                        <p className="">Escolha um método de pagamento:</p>
+                        <p className="text-lg font-bold">Escolha um método de pagamento:</p>
                         <div className="bg-yellow-100 py-6">
                             <div className="flex flex-col ">
 
@@ -74,7 +74,7 @@ function Content({ router: { query } }) {
                                         <p>Agência: 0001</p>
                                         <p>Conta: 25085155-6</p>
                                         <p>Nome: FELIPE V MACHADO</p>
-                                        <p className="font-bold">Após o pagamento, nos envie o comprovante, abaixo:</p>
+                                        <p className="font-bold">Nos envie o comprovante:</p>
                                         <div className="text-center h-full">
                                             <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl">Enviar comprovante</button>
                                         </div>
@@ -94,8 +94,7 @@ function Content({ router: { query } }) {
                                         <p>Agência: 1777-9</p>
                                         <p>Conta: 18319-9</p>
                                         <p>FELIPE V MACHADO</p>
-                                        <p className="font-bold">Após o pagamento, nos envie o comprovante, abaixo:</p>
-                                        <div className="text-center h-full">
+                                        <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="text-center h-full">
                                             <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl">Enviar comprovante</button>
                                         </div>
                                     </div> : null
@@ -113,8 +112,7 @@ function Content({ router: { query } }) {
                                         <p>Chave PIX, email: </p>
                                         <p className="font-bold">epilef231veras@gmail.com</p>
                                         <p>Transferir à: FELIPE V MACHADO</p>
-                                        <p className="font-bold">Após o pagamento, nos envie o comprovante, abaixo:</p>
-                                        <div className="text-center h-full">
+                                        <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="text-center h-full">
                                             <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl">Enviar comprovante</button>
                                         </div>
                                     </div> : null
@@ -129,8 +127,7 @@ function Content({ router: { query } }) {
                                 } className="inline-flex mx-14 border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/pp.png" height={80} width={80} /><span className="font-bold  flex-1  place-self-center">PicPay</span></button>
                                 {
                                     picpay ? <div className="bg-yellow-200">
-                                        <p className="font-bold">Após o pagamento, nos envie o comprovante, abaixo:</p>
-                                        <div className="text-center h-full">
+                                        <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="text-center h-full">
                                             <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl">Enviar comprovante</button>
                                         </div>
                                         <p className="">Acesse o link <a className="text-blue-500" href='https://picpay.me/felipeverasm'>https://picpay.me/felipeverasm</a></p>
