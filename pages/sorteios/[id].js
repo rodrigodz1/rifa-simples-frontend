@@ -36,7 +36,7 @@ function Sorteio({ rifas, gamblers }) {
                             <img src={API_URL + rifas.image.formats.small.url} />
                         </div>
                     </div>
-                    <div className="border border-black text-center m-2">
+                    <div className="text-sm border border-black text-center m-2 whitespace-pre-line">
                         {rifas.description}
                     </div>
                 </div>
