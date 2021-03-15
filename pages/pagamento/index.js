@@ -40,11 +40,23 @@ function Content({ router: { query } }) {
 
                     <div className="text-center pt-4">
                         <p>Oi, {name}</p>
-                        <p className="">Escolha um método de pagamento.</p>
-                        <p>Em seguida nos envie o comprovante.</p>
+
+
+
                         <div className="text-center bg-green-200 font-bold">
                             Pedido número: #{id}
                         </div>
+                        <div className="text-center m-2">
+                            Números selecionados
+                        <div className="bg-black text-white">{
+                                numbers + " "
+                            }</div>
+
+                        Valor a transferir
+                        <div className="bg-yellow-300 text-black font-bold">R$ {price}</div>
+
+                        </div>
+                        <p className="">Escolha um método de pagamento:</p>
                         <div className="bg-yellow-100 py-6">
                             <div className="flex flex-col ">
 
@@ -57,10 +69,15 @@ function Content({ router: { query } }) {
                                     }
                                 } className="inline-flex mx-14 border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/nb.png" height={80} width={80} /><span className="font-bold flex-1  place-self-center">Nubank</span></button>
                                 {
-                                    nubank ? <div className=" text-left pl-10 bg-yellow-200"><p>Nubank:</p>
+                                    nubank ? <div className=" text-left pl-10 bg-yellow-200">
+                                        <p>Nubank:</p>
                                         <p>Agência: 0001</p>
                                         <p>Conta: 25085155-6</p>
                                         <p>Nome: FELIPE V MACHADO</p>
+                                        <p className="font-bold">Após o pagamento, nos envie o comprovante, abaixo:</p>
+                                        <div className="text-center h-full">
+                                            <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl">Enviar comprovante</button>
+                                        </div>
                                     </div> : null
                                 }
                                 <button onClick={
@@ -77,6 +94,10 @@ function Content({ router: { query } }) {
                                         <p>Agência: 1777-9</p>
                                         <p>Conta: 18319-9</p>
                                         <p>FELIPE V MACHADO</p>
+                                        <p className="font-bold">Após o pagamento, nos envie o comprovante, abaixo:</p>
+                                        <div className="text-center h-full">
+                                            <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl">Enviar comprovante</button>
+                                        </div>
                                     </div> : null
                                 }
                                 <button onClick={
@@ -92,6 +113,10 @@ function Content({ router: { query } }) {
                                         <p>Chave PIX, email: </p>
                                         <p className="font-bold">epilef231veras@gmail.com</p>
                                         <p>Transferir à: FELIPE V MACHADO</p>
+                                        <p className="font-bold">Após o pagamento, nos envie o comprovante, abaixo:</p>
+                                        <div className="text-center h-full">
+                                            <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl">Enviar comprovante</button>
+                                        </div>
                                     </div> : null
                                 }
                                 <button onClick={
@@ -104,6 +129,10 @@ function Content({ router: { query } }) {
                                 } className="inline-flex mx-14 border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/pp.png" height={80} width={80} /><span className="font-bold  flex-1  place-self-center">PicPay</span></button>
                                 {
                                     picpay ? <div className="bg-yellow-200">
+                                        <p className="font-bold">Após o pagamento, nos envie o comprovante, abaixo:</p>
+                                        <div className="text-center h-full">
+                                            <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl">Enviar comprovante</button>
+                                        </div>
                                         <p className="">Acesse o link <a className="text-blue-500" href='https://picpay.me/felipeverasm'>https://picpay.me/felipeverasm</a></p>
                                         ou pelo QRCode abaixo:
                                         <img src="/ppF.jpeg" />
@@ -124,7 +153,10 @@ function Content({ router: { query } }) {
                                 banco === 'Nubank' || banco === 'Banco do Brasil' ? <div><p>Banco: {banco}</p>
                                     <p>Titular: {titular}</p>
                                     <p>Agência: {agencia} </p>
-                                    <p>Conta: {conta} </p></div> : null
+                                    <p>Conta: {conta} </p>
+
+                                </div> : null
+
                             }
                             {
                                 banco === 'PIX' ? <div>a definir pix</div> : null
@@ -137,21 +169,10 @@ function Content({ router: { query } }) {
 
 
 
-                    <div className="text-center m-2">
-                        Números selecionados
-                        <div className="bg-black text-white">{
-                            numbers + " "
-                        }</div>
 
-                        Valor a transferir
-                        <div className="bg-yellow-300 text-black font-bold">R$ {price}</div>
-
-                    </div>
 
                 </div>
-                <div className="text-center h-full">
-                    <button className="bg-green-600 text-gray-100 p-2 mt-5 rounded-md shadow-xl">Enviar comprovante</button>
-                </div>
+
 
 
             </div>
