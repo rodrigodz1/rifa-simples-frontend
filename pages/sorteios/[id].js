@@ -27,16 +27,16 @@ function Sorteio({ rifas, gamblers }) {
 
         <div>
             <Header name="INÍCIO" link="/" />
-            <div className="bg-black"> {/*bg-black*/}
+            <div className="bg-gray-600"> {/*bg-black*/}
 
                 <div className="grid grid-cols-1 mx-6 text-white"> {/*text-white*/}
-                    <div className="font-bold text-center m-2 place-self-center">
+                    <div className="text-xl font-bold text-center m-2 place-self-center">
                         {rifas.name}
-                        <div className="border border-black ">
-                            <img src={API_URL + rifas.image.formats.small.url} />
+                        <div className="border border-black rounded-md bg-black">
+                            <img className="rounded-md" src={API_URL + rifas.image.formats.small.url} />
                         </div>
                     </div>
-                    <div className="text-sm border border-black text-center m-2 whitespace-pre-line">
+                    <div className="bg-gray-900 rounded-md text-sm border border-black text-center whitespace-pre-line">
                         {rifas.description}
                     </div>
                 </div>

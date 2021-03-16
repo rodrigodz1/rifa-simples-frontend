@@ -7,7 +7,7 @@ const Header = (props) => {
 
 	return (
 
-		<nav className="grid grid-cols-2 gap-3 p-3 bg-black text-white items-center">
+		<nav className="sticky top-0 grid grid-cols-2 gap-3 p-3 bg-black text-white items-center">
 			{/*<a href="#">
 				Hiper Prêmios Online
 			</a>*/}
