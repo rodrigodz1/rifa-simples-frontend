@@ -32,8 +32,10 @@ function Sorteio({ rifas, gamblers }) {
                 <Header name="INÍCIO" sorteios="/sorteios" />
                 <div className="grid grid-cols-1 mx-6 text-white"> {/*text-white*/}
                     <div className="text-xl font-bold text-center m-2 place-self-center">
-                        {rifas.name}
-                        <div className="border border-black rounded-md bg-black">
+                        <div className="bg-gray-900 rounded-md border border-black">
+                            {rifas.name}
+                        </div>
+                        <div className=" rounded-md">
                             <img className="rounded-md" src={API_URL + rifas.image.formats.small.url} />
                         </div>
                     </div>
