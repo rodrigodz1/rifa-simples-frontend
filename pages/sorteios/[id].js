@@ -38,10 +38,11 @@ function Sorteio({ rifas, gamblers }) {
                         <div className=" rounded-md">
                             <img className="rounded-md" src={API_URL + rifas.image.formats.small.url} />
                         </div>
+                        <div className="bg-gray-900 rounded-md text-sm border border-black text-center whitespace-pre-line pt-1">
+                            {rifas.description}
+                        </div>
                     </div>
-                    <div className="bg-gray-900 rounded-md text-sm border border-black text-center whitespace-pre-line">
-                        {rifas.description}
-                    </div>
+
                 </div>
                 <div className="grid grid-cols-3 m-2">
 
