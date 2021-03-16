@@ -50,7 +50,7 @@ function Sorteio({ rifas, gamblers }) {
                 </div>
 
 
-                <Board className="bg-yellow-200 grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 rounded-md mx-4" gamblers={gamblers} tickets={rifas.rifa_tickets} rifa_id={rifas.id} ticket_price={rifas.ticket_price} />
+                <Board className="bg-gray-900 grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 rounded-md mx-4" gamblers={gamblers} tickets={rifas.rifa_tickets} rifa_id={rifas.id} ticket_price={rifas.ticket_price} />
 
 
             </div>
