@@ -26,12 +26,12 @@ function Sorteio({ rifas, gamblers }) {
 
     return (
 
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 font-montserrat">
 
             <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-600"> {/*bg-black*/}
                 <Header name="INÍCIO" sorteios="/sorteios" />
                 <div className="grid grid-cols-1 mx-6 text-white"> {/*text-white*/}
-                    <div className="text-xl font-bold text-center m-2 place-self-center">
+                    <div className="text-l font-bold text-center m-2 place-self-center">
                         <div className="bg-gray-900 rounded-md border border-black">
                             {rifas.name}
                         </div>

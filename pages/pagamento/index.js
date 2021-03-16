@@ -32,7 +32,7 @@ function Content({ router: { query } }) {
     const name = (query.name)
 
     return (
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
+        <div className="font-montserrat relative inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
             <Header name="INÍCIO" sorteios="/sorteios" />
             <div className="">
 
@@ -158,7 +158,7 @@ function Content({ router: { query } }) {
                     </div>
                 </div>
             </div>
-            <div className="w-full absolute bottom-0"><Footer /></div>
+            <div className="w-full relative bottom-0"><Footer /></div>
 
         </div>
 

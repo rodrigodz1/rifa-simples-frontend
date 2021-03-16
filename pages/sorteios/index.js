@@ -12,7 +12,7 @@ function Content({ rifas }) {
 
 
     return (
-        <div className="">
+        <div className="font-montserrat">
 
 
             <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">

@@ -2,7 +2,13 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat'],
+        'lato': ['Lato'],
+        'garamond': ['Garamond']
+      }
+    },
     screens: {
       'tablet': '640px',
       // => @media (min-width: 640px) { ... }

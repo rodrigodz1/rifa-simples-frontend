@@ -33,7 +33,7 @@ function Home({ rifas }) {
   };
 
   return (
-    <div className="">
+    <div className="font-montserrat">
 
       <Header name="SORTEIOS" sorteios="sorteios" />
 
