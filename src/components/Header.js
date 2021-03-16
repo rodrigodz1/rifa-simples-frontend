@@ -7,7 +7,7 @@ const Header = (props) => {
 
 	return (
 
-		<nav className="sticky top-0 grid grid-cols-2 gap-3 p-3 bg-black text-white items-center">
+		<nav className="grid grid-cols-2  p-3 bg-black text-white items-center">
 			{/*<a href="#">
 				Hiper Prêmios Online
 			</a>*/}
@@ -33,7 +33,7 @@ const Header = (props) => {
 					<Link href='/'>
 						<span className=" transition duration-300 tablet:px-2 text-white text-xl py-2 border-black tracking-wide font-bold uppercase hover:text-yellow-400 border-b-4 hover:border-yellow-400 cursor-pointer">Início </span>
 					</Link>
-					<Link href='sorteios'>
+					<Link href={props.sorteios + ""}>
 						<span className="transition duration-300 tablet:px-2 text-white text-xl py-2 border-black tracking-wide font-bold uppercase hover:text-yellow-400 border-b-4 hover:border-yellow-400 cursor-pointer">
 
 							sorteios

@@ -156,7 +156,7 @@ class Cart extends Component {
                         </Form.Field>
 
 
-                        <h1 className="grid grid-cols-3 text-white shadow-xl mx-4"> {this.state.numbers.map(nm =>
+                        <h1 className="grid grid-cols-5 text-white shadow-xl mx-4"> {this.state.numbers.map(nm =>
                             <div className="bg-black rounded-md p-1 m-1">
                                 {nm}
                             </div>)}

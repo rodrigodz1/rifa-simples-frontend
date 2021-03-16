@@ -1,6 +1,7 @@
 //import getConfig from 'next/config'
 import fetch from 'isomorphic-unfetch'
 import Header from '../../src/components/Header'
+import Footer from '../../src/components/Footer'
 import Board from '../../src/components/Board'
 import api from '../../api/config'
 
@@ -25,10 +26,10 @@ function Sorteio({ rifas, gamblers }) {
 
     return (
 
-        <div>
-            <Header name="INÍCIO" link="/" />
-            <div className="bg-gray-600"> {/*bg-black*/}
+        <div className="absolute inset-0">
 
+            <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-600"> {/*bg-black*/}
+                <Header name="INÍCIO" sorteios="/sorteios" />
                 <div className="grid grid-cols-1 mx-6 text-white"> {/*text-white*/}
                     <div className="text-xl font-bold text-center m-2 place-self-center">
                         {rifas.name}
@@ -52,9 +53,9 @@ function Sorteio({ rifas, gamblers }) {
 
                 <Board className="bg-gray-900 grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 rounded-md mx-4" gamblers={gamblers} tickets={rifas.rifa_tickets} rifa_id={rifas.id} ticket_price={rifas.ticket_price} />
 
-
+                <div className="mt-2"><Footer /></div>
             </div>
-            <div className="border border-black text-center my-20">maybe a footer</div>
+
         </div>
 
     )

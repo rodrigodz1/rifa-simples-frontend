@@ -23,7 +23,7 @@ function SorteioCard({ rifa }) {
 
     return (
 
-        <div className="border border-black place-self-center m-4 p-4 rounded-md shadow-xl bg-black text-white text-center">
+        <div className="border border-black place-self-center m-4 p-4 rounded-md shadow-xl  text-white text-center">
             <p className="font-bold">{rifa.name}</p>
             <img className="" src={API_URL + rifa.image.formats.thumbnail.url} />
             <button onClick={handleClick}>

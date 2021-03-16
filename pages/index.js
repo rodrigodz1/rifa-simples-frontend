@@ -35,15 +35,15 @@ function Home({ rifas }) {
   return (
     <div className="">
 
+      <Header name="SORTEIOS" sorteios="sorteios" />
 
-      <Header name="SORTEIOS" link="sorteios" />
-      <div className="bg-gray-800">
+      <body className="flex flex-col position-absolute  ">
+        <div className="bg-gray-800">
 
-        <Slider {...settings}>
-          {carrousel}
-        </Slider>
-      </div>
-      <body className="flex flex-col position-absolute">
+          <Slider {...settings}>
+            {carrousel}
+          </Slider>
+        </div>
         <Content />
 
         <Footer />

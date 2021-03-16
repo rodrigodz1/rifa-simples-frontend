@@ -12,19 +12,23 @@ function Content({ rifas }) {
 
 
     return (
-        <div>
-            <Header />
+        <div className="">
 
-            <div className="grid grid-cols-1 justify-center">
-                {
-                    rifas.map(rifa => (
-                        <SorteioCard key={rifa.id} rifa={rifa} />
-                    ))
 
-                }
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
+                <Header sorteios="/sorteios" />
+                <div className="grid grid-cols-1 justify-center">
+                    {
+                        rifas.map(rifa => (
+                            <SorteioCard key={rifa.id} rifa={rifa} />
+                        ))
+
+                    }
+                </div>
+                <div className="w-full absolute bottom-0"><Footer /></div>
             </div>
 
-            <Footer />
+
         </div>
 
     )
