@@ -2,18 +2,29 @@ import Image from 'next/image'
 import Header from '../../src/components/Header'
 import Footer from '../../src/components/Footer'
 import { withRouter } from 'next/router'
-import PaymentDetails from '../../src/components/PaymentDetails'
+
+import { useDispatch, useSelector } from 'react-redux';
+import { clickedOnReserved, selectPaymentDetails } from '../../features/payment/paymentDetails'
 
 import React, { useState } from 'react'
 
 
 function Content({ router: { query } }) {
 
-    const [isBankInfoVisible, setIsBankInfoVisible] = useState(false)
-    const [banco, setBanco] = useState()
-    const [titular, setTitular] = useState()
-    const [conta, setConta] = useState()
-    const [agencia, setAgencia] = useState()
+    const id = (query.tid)
+    const numbers = (query.object);
+    //const [numbers, setNumbers] = useState([query.object])
+    const price = (query.price)
+    const name = (query.name)
+    const paymentDetails = useSelector(selectPaymentDetails)
+    //console.log(paymentDetails.personName);
+    //console.log(paymentDetails.selectedNumbers);
+    //console.log(paymentDetails.valueBought);
+    //console.log(paymentDetails.ticketNumber);
+
+
+    //paymentDetails = useSelector(selectPaymentDetails)
+    //console.log(paymentDetails.personName);
 
     const [nubank, setNubank] = useState(false)
     const [bancodobrasil, setBancodobrasil] = useState(false)
@@ -25,36 +36,31 @@ function Content({ router: { query } }) {
     1. A partir do número da rifa, verificar se os números escolhidos estão de fato reservados.
     2. Verificar se o nome digitado realmente está no db
     */
-    const id = (query.tid)
-    const numbers = (query.object);
-    //const [numbers, setNumbers] = useState([query.object])
-    const price = (query.price)
-    const name = (query.name)
+
 
     return (
         <div className="font-montserrat relative inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
             <Header name="INÍCIO" sorteios="/sorteios" />
             <div className="">
-
-                <div className="grid grid-cols-1 mx-6 pt-2">
+                {paymentDetails.valueBought !== 0 ? <div className="grid grid-cols-1 mx-6 pt-2">
 
 
                     <div className="text-center pt-4 rounded-md">
-                        <p className="text-white">Oi, {name}</p>
+                        <p className="text-white">Oi, {paymentDetails.personName}</p>
 
 
 
                         <div className="text-center text-red-600 bg-green-200">
-                            Pedido número: #{id}
+                            Pedido número: #{paymentDetails.ticketNumber}
                         </div>
                         <div className="text-center text-white m-2">
                             Números selecionados
                         <div className="bg-black text-white">{
-                                numbers + " "
+                                paymentDetails.selectedNumbers + " "
                             }</div>
 
                         Valor a transferir
-                        <div className="bg-yellow-300 text-black font-bold">R$ {price}</div>
+                        <div className="bg-yellow-300 text-black font-bold">R$ {paymentDetails.valueBought}</div>
 
                         </div>
                         <p className="text-lg text-white font-bold">Escolha um método de pagamento:</p>
@@ -156,7 +162,8 @@ function Content({ router: { query } }) {
                             </div> : null
                         }
                     </div>
-                </div>
+                </div> : <div className="text-xl text-white text-center">Se você está vendo essa página, provavelmente algo errado aconteceu ao reservar seu número.<p>-</p><p>Entre em contato conosco via WhatsApp para solucionar esse problema o mais rápido possível: |colocar botao aqui dps|</p></div>}
+
             </div>
             <div className="w-full relative bottom-0"><Footer /></div>
 

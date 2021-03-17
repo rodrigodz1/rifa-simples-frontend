@@ -4,7 +4,17 @@ import { Form, Button } from 'semantic-ui-react'
 import Router, { withRouter } from 'next/router'
 import parsePhoneNumber, { isValidNumber, isValidPhoneNumber, AsYouType } from 'libphonenumber-js'
 
+import { useSelector, useDispatch } from 'react-redux'
+import { clickedOnReserved } from '../../features/payment/paymentDetails'
+import { connect } from 'react-redux'
+
 import api from '../../api/config'
+
+var name;
+var numbers;
+var totalPrice;
+var tel;
+var ticketNumber;
 
 class Cart extends Component {
     constructor(props) {
@@ -123,16 +133,26 @@ class Cart extends Component {
                 //location.assign('http://localhost:3000/')
                 //this.props.BoardCartCall(this.props.valueFromParent);
                 //console.log(this.props.valueFromParent);
-                Router.push({ pathname: '/pagamento', query: { name: this.state.name, object: this.props.valueFromParent, price: (this.precoDaRifa) * (this.props.valueFromParent).length, tid: ticket_number } })
+                /* REDUX */
+                //const paymentDetails = useSelector(selectPaymentDetails)
+                //console.log(paymentDetails.personName);
+                name = this.state.name;
+                totalPrice = (this.precoDaRifa) * (this.props.valueFromParent).length
+                numbers = this.props.valueFromParent
+                tel = this.state.cel
+                ticketNumber = ticket_number
+
+                this.props.payment()
+                Router.push({ pathname: '/pagamento' })
             } else {
                 this.setState({ reservedWasClicked: false })
-                alert('O número digitado não é válido.')
+                alert('O número/nome digitado não é/são válido(s).')
 
             }
 
         } catch (error) {
             this.setState({ reservedWasClicked: false })
-            alert('Um dos números que você tentou reservar se encontra reservado.\nPor favor, atualize a página.')
+            console.log(error.message);
         }
 
     }
@@ -189,4 +209,12 @@ class Cart extends Component {
     }
 }
 
-export default Cart
+//export default Cart
+
+const mapDispatchToProps = (dispatch) => {
+    //console.log('aaaaaaaaaaaaaA', this.state.name, this.props.valueFromParent, (this.props.ticket_price) * ((this.props.valueFromParent).length));
+    return {
+        payment: () => dispatch(clickedOnReserved({ personName: name, selectedNumbers: numbers, valueBought: totalPrice, ticketNumber: ticketNumber }))
+    }
+};
+export default connect(null, mapDispatchToProps)(Cart)
