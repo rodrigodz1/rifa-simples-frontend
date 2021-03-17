@@ -102,16 +102,21 @@ class Cart extends Component {
                 let ticket_begin = ''
                 let ticket_end = ''
                 let ticket_number = '';
+                let g_id = 0
+                console.log(g_id);
                 (await numerosCadastrados).map((tmp, i) => {
                     let tam = ((tmp.data.gambler_tickets).length)
                     if (i == 0) {
-                        ticket_begin = tmp.data.gambler_tickets[tam - 1].id
+                        ticket_begin = tmp.data.gambler_tickets[tam - 1].id + "-"
+                        g_id = tmp.data.id + ""
                     }
-                    ticket_end = tmp.data.gambler_tickets[tam - 1].id
+                    //ticket_end = tmp.data.gambler_tickets[i].id + ""
+
+                    // ticket_number += tmp.data.gambler_tickets[i].id + "-"
                     //console.log(ticket_number);
                 })
                 let tam = (await numerosCadastrados).length
-                ticket_number = (ticket_begin + ticket_end) + '-' + tam
+                ticket_number = g_id + "-" + this.state.rifa_id + "-" + tam
                 //let id_pedido = (numerosCadastrados[0].data.gambler_tickets).length
                 //let ticket_number = numerosCadastrados[0].data.gambler_tickets[id_pedido - 1].id
 
