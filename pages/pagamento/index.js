@@ -129,7 +129,7 @@ function Content({ router: { query } }) {
                                 <p className="font-bold">Nos envie o comprovante:</p>
                                 <div className=" h-full">
 
-                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href="https://wa.me/559182264086?text=oi!!!">Enviar comprovante</a></button>
+                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href="https://wa.me/559182264084?text=oi!!!">Enviar comprovante</a></button>
 
                                 </div>
                             </div> : null
@@ -141,7 +141,7 @@ function Content({ router: { query } }) {
                                 <p>Conta: 18319-9</p>
                                 <p>FELIPE V MACHADO</p>
                                 <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="h-full">
-                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href="https://wa.me/559182264086?text=oi!!!">Enviar comprovante</a></button>
+                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href="https://wa.me/559182264084?text=oi!!!">Enviar comprovante</a></button>
                                 </div>
                             </div> : null
                         }
@@ -151,14 +151,14 @@ function Content({ router: { query } }) {
                                 <p className="font-bold">epilef231veras@gmail.com</p>
                                 <p>Transferir à: FELIPE V MACHADO</p>
                                 <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="h-full">
-                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href="https://wa.me/559182264086?text=oi!!!">Enviar comprovante</a></button>
+                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href="https://wa.me/559182264084?text=oi!!!">Enviar comprovante</a></button>
                                 </div>
                             </div> : null
                         }
                         {
                             picpay ? <div className="text-left bg-gray-700 text-white">
                                 <p className="font-bold">Nos envie o comprovante:</p>                                        <div className=" h-full">
-                                    <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl"><a href="https://wa.me/559182264086?text=oi!!!">Enviar comprovante</a></button>
+                                    <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl"><a href="https://wa.me/559182264084?text=oi!!!">Enviar comprovante</a></button>
                                 </div>
                                 <p className="">Acesse o link <a className="text-blue-500" href='https://picpay.me/felipeverasm'>https://picpay.me/felipeverasm</a></p>
                                         ou pelo QRCode abaixo:
