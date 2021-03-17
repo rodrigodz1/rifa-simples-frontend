@@ -42,10 +42,10 @@ function Content({ router: { query } }) {
         <div className="font-montserrat relative inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
             <Header name="INÍCIO" sorteios="/sorteios" />
             <div className="">
-                {paymentDetails.valueBought !== 0 ? <div className="grid grid-cols-1 mx-6 pt-2">
+                {(paymentDetails.valueBought !== 0) ? <div className="grid grid-cols-1 mx-6 pt-2">
 
 
-                    <div className="text-center pt-4 rounded-md">
+                    <div className=" text-center pt-4 rounded-md">
                         <p className="text-white">Oi, {paymentDetails.personName}</p>
 
 
@@ -55,9 +55,11 @@ function Content({ router: { query } }) {
                         </div>
                         <div className="text-center text-white m-2">
                             Números selecionados
-                        <div className="bg-black text-white">{
-                                paymentDetails.selectedNumbers + " "
-                            }</div>
+                        <div className="">
+                                {
+                                    paymentDetails.selectedNumbers.map(i => <button disabled={true} className="m-1 p-1 rounded-md bg-black text-white">{i}</button>)
+                                }
+                            </div>
 
                         Valor a transferir
                         <div className="bg-yellow-300 text-black font-bold">R$ {paymentDetails.valueBought}</div>
