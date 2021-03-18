@@ -10,7 +10,7 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html>
-				<title>HPO - Hiper Prêmios Online</title>
+				<title>Hiper Prêmios</title>
 				<Head>
 
 					<link rel="icon" href="/corte.png" />
