@@ -37,8 +37,8 @@ function Home({ rifas }) {
 
       <Header name="SORTEIOS" sorteios="sorteios" />
 
-      <body className="flex flex-col position-absolute  ">
-        <div className="bg-gray-800">
+      <body className="flex flex-col position-absolute ">
+        <div className="bg-gray-800 ">
 
           <Slider {...settings}>
             {carrousel}

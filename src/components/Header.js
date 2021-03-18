@@ -7,10 +7,13 @@ const Header = (props) => {
 
 	return (
 
-		<nav className="font-montserrat grid grid-cols-3  p-3 bg-black text-white items-center overflow-hidden">
-
-			<img src="/corte.png" width={60} height={20} href="/" className="rounded" />
-			<img src="/hiperp.png" width={60} height={20} href="/" className="w-max h-max" />
+		<nav className="font-montserrat grid grid-cols-3  p-3 bg-black text-white items-center">
+			<Link href="/">
+				<button className="rounded tablet:place-self-center">
+					<img src="/corte.png" width={60} height={20} href="/" className="" />
+				</button>
+			</Link>
+			<img src="/hiperp.png" href="/" className="w-max" />
 
 			<button
 				onClick={() => {
