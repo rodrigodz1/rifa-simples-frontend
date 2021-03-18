@@ -17,7 +17,7 @@ function Content({ rifas }) {
 
             <div className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
                 <Header sorteios="/sorteios" />
-                <div className="grid grid-cols-1 justify-center">
+                <div className="grid grid-cols-1 tablet:grid-cols-3 laptop:grid-cols-5 desktop:grid-cols-7 justify-center">
                     {
                         rifas.map(rifa => (
                             <SorteioCard key={rifa.id} rifa={rifa} />
