@@ -12,6 +12,7 @@ class Board extends Component {
             fetch_Numbers: this.props.tickets,
             rifa_id: this.props.rifa_id,
             ticket_price: this.props.ticket_price,
+            total_tickets: this.props.total_tickets
         }
 
         this.numbers = {
@@ -89,17 +90,19 @@ class Board extends Component {
 
     render() {
         const botoes = []
-        for (let i = 0; i < 1000; i++) {
+        //const totalTickets = this.state.total_tickets
+
+        for (let i = 0; i < this.state.total_tickets; i++) {
             botoes.push(i)
         }
 
-        let btn_class = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900";
+        //let btn_class = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900";
 
         if (this.state.clicked) {
             btn_class = "border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-900"
         }
 
-        let fetch_num = 1000
+        let fetch_num = this.state.total_tickets
         let situation = 'available'
         let className = ''
 

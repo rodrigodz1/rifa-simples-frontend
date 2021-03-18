@@ -12,7 +12,8 @@ function Sorteio({ rifas, gamblers }) {
     //console.log(gamblers);
     let reserved = 0;
     let paid = 0;
-    let available = 1000;
+    //let available = 1000;
+    let available = rifas.total_tickets
 
     rifas.rifa_tickets.map(item => {
         if (item.state === 'reserved') {
@@ -54,7 +55,7 @@ function Sorteio({ rifas, gamblers }) {
                 </div>
 
 
-                <Board className="bg-gray-900 grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 rounded-md mx-4" gamblers={gamblers} tickets={rifas.rifa_tickets} rifa_id={rifas.id} ticket_price={rifas.ticket_price} />
+                <Board className="bg-gray-900 grid grid-cols-5 laptop:grid-cols-8 desktop:grid-cols-10 rounded-md mx-4" gamblers={gamblers} tickets={rifas.rifa_tickets} rifa_id={rifas.id} ticket_price={rifas.ticket_price} total_tickets={rifas.total_tickets} />
 
                 <div className="mt-2"><Footer /></div>
             </div>
