@@ -15,7 +15,7 @@ function Content({ rifas }) {
         <div className="font-montserrat">
 
 
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
+            <div className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
                 <Header sorteios="/sorteios" />
                 <div className="grid grid-cols-1 justify-center">
                     {
@@ -25,7 +25,7 @@ function Content({ rifas }) {
 
                     }
                 </div>
-                <div className="w-full absolute bottom-0"><Footer /></div>
+                <div className=""><Footer /></div>
             </div>
 
 
