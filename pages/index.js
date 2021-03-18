@@ -2,13 +2,16 @@ import Head from 'next/head'
 import Header from '../src/components/Header'
 import Content from '../src/components/Content'
 import Footer from '../src/components/Footer'
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick';
+import Router from 'next/router'
 
 
 function Home({ rifas }) {
 
   const { API_URL } = process.env
+
+  const [isReady, setIsReady] = useState(false)
 
   const images = []
   rifas.map(item => {
@@ -33,18 +36,19 @@ function Home({ rifas }) {
   };
 
   return (
-    <div className="font-montserrat">
+    <div className="font-montserrat ">
 
       <Header name="SORTEIOS" sorteios="sorteios" />
 
-      <body className="flex flex-col position-absolute ">
-        <div className="bg-gray-800 ">
-
-          <Slider {...settings}>
+      <body className="grid grid-cols-1  ">
+        {isReady ? <div className="bg-gray-800  ">
+          <Slider className="" {...settings}>
             {carrousel}
           </Slider>
-        </div>
-        <Content />
+          <Content />
+        </div> : <div><Content /></div>}
+
+
 
         <Footer />
 

@@ -23,18 +23,14 @@ function SorteioCard({ rifa }) {
 
     return (
 
-        <div className="border border-black place-self-center m-4 p-4 rounded-md shadow-xl  text-white text-center">
-            <p className="font-bold">{rifa.name}</p>
-            <img className="" src={API_URL + rifa.image.formats.thumbnail.url} />
-            <button onClick={handleClick}>
-                <Link href="/sorteios/[id]" as={`/sorteios/${rifa.id}`}>
-                    <a className="font-bold text-yellow-300">Ver informações</a>
+        <div className=" place-self-center m-4 rounded-md shadow-xl  text-white text-center">
 
-                </Link>
-            </button>
-            {
-                gotClicked ? <Loader /> : null
-            }
+            <Link href="/sorteios/[id]" as={`/sorteios/${rifa.id}`}>
+                <button className="p-2">
+                    <img className="" src={API_URL + rifa.img_sorteio_page.formats.small.url} />
+                </button>
+            </Link>
+
 
         </div>
     )
