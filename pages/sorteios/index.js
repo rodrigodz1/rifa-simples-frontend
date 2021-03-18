@@ -15,9 +15,9 @@ function Content({ rifas }) {
         <div className="font-montserrat">
 
 
-            <div className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
                 <Header sorteios="/sorteios" />
-                <div className="grid grid-cols-1 justify-center">
+                <div className="grid grid-cols-1 tablet:grid-cols-3 laptop:grid-cols-5">
                     {
                         rifas.map(rifa => (
                             <SorteioCard key={rifa.id} rifa={rifa} />
@@ -25,7 +25,7 @@ function Content({ rifas }) {
 
                     }
                 </div>
-                <div className=""><Footer /></div>
+                <div className="absolute bottom-0 w-full"><Footer /></div>
             </div>
 
 
