@@ -47,10 +47,10 @@ function Sorteio({ rifas, gamblers }) {
                 </div>
                 <div className="grid grid-cols-3 m-2">
 
-                    <button title="" className=" bg-green-600 text-white mx-1 p-1 font rounded-full">Disponíveis ({available})</button>
+                    <button title="" className=" bg-green-600 text-white mx-1 p-1 font rounded-sm">Disponíveis ({available})</button>
 
-                    <button className="bg-yellow-600 text-white mx-1 p-1 font rounded-full">Reservados ({reserved})</button>
-                    <button className="bg-red-600 text-white mx-1 p-1 font rounded-full">Pagos ({paid})</button>
+                    <button className="bg-yellow-600 text-white mx-1 p-1 font rounded-sm">Reservados ({reserved})</button>
+                    <button className="bg-red-600 text-white mx-1 p-1 font rounded-sm">Pagos ({paid})</button>
 
                 </div>
 
