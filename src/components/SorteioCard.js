@@ -26,7 +26,7 @@ function SorteioCard({ rifa }) {
         <div className=" place-self-center m-4 rounded-md shadow-xl  text-white text-center">
 
             <Link href="/sorteios/[id]" as={`/sorteios/${rifa.id}`}>
-                <button onClick={rifa.status === 'open' ? handleClick : null} className="">
+                <button disabled={rifa.status === 'open' ? false : true} onClick={rifa.status === 'open' ? handleClick : null} className="">
                     <img className="" src={API_URL + rifa.img_sorteio_page.formats.small.url} />
 
                 </button>
