@@ -39,10 +39,10 @@ function Content({ router: { query } }) {
 
 
     return (
-        <div className="font-montserrat tablet:relative tablet:inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
+        <div className="font-montserrat tablet:absolute tablet:inset-y-0  bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 ">
             <Header name="INÍCIO" sorteios="/sorteios" />
             <div className="">
-                {(paymentDetails.valueBought !== 0) ? <div className=""><div className="grid grid-cols-1 mx-6 pt-2">
+                {(paymentDetails.valueBought !== 0) ? <div className="grid grid-cols-1 mx-6 pt-2">
 
 
                     <div className=" text-center pt-4 rounded-md">
@@ -67,8 +67,8 @@ function Content({ router: { query } }) {
                         </div>
                         <p className="text-lg text-white font-bold">Escolha um método de pagamento:</p>
                         <div className=" py-2">
-                            <div className="grid grid-cols-4">
-                                <div className="mx-1">
+                            <div className=" grid grid-cols-4">
+                                <div className="mx-1 ">
                                     <button onClick={
                                         () => {
                                             setNubank(!nubank)
@@ -101,7 +101,7 @@ function Content({ router: { query } }) {
                                     } className="inline-flex border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/pix.png" height={80} width={80} /></button>
 
                                 </div>
-                                <div className="mx-1">
+                                <div className="mx-1 ">
                                     <button onClick={
                                         () => {
                                             setNubank(false)
@@ -109,7 +109,7 @@ function Content({ router: { query } }) {
                                             setPix(false)
                                             setPicpay(!picpay)
                                         }
-                                    } className="inline-flex border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/pp.png" height={80} width={80} /></button>
+                                    } className=" inline-flex border border-black bg-yellow-200 rounded-xl my-2"><img className="rounded-xl" src="/pp.png" height={80} width={80} /></button>
 
                                 </div>
                             </div>
@@ -120,6 +120,7 @@ function Content({ router: { query } }) {
     <Bank name="PicPay" padding="pt-3" img="/pp.png" owner="RODRIGO DE BRITO" account={[91011, 11109]} />*/}
 
                         </div>
+
                         {
                             nubank ? <div className=" text-left pl-20 bg-gray-700 text-white border-b-2">
                                 <p>Nubank:</p>
@@ -162,12 +163,13 @@ function Content({ router: { query } }) {
                                 </div>
                                 <p className="">Acesse o link <a className="text-blue-500" href='https://picpay.me/felipeverasm'>https://picpay.me/felipeverasm</a></p>
                                         ou pelo QRCode abaixo:
-                                        <img src="/ppF.jpeg" />
+                                        <img width={320} src="/ppF.jpeg" />
                             </div> : null
                         }
-                    </div>
 
-                </div> <div className="tablet:relative tablet:bottom-0 w-full"><Footer /></div></div> : <div className="text-xl text-white text-center">Se você está vendo essa página, provavelmente algo errado aconteceu ao reservar seu número.<p>-</p><p>Entre em contato conosco via WhatsApp para solucionar esse problema o mais rápido possível: |colocar botao aqui dps|</p><div className="absolute bottom-0 w-full"><Footer /></div></div>}
+                    </div>
+                    {/*<div className="tablet:relative tablet:bottom-0 w-full"><Footer /></div>*/}
+                </div> : <div className="text-xl text-white text-center ">Se você está vendo essa página, provavelmente algo errado aconteceu ao reservar seu número.<p>-</p><p>Entre em contato conosco via WhatsApp para solucionar esse problema o mais rápido possível: <p><a href="https://wa.me/559182264084"><button className="bg-green-500 p-1 mt-2 rounded-md" >Nosso WhatsApp</button></a></p></p></div>}
 
             </div>
 
