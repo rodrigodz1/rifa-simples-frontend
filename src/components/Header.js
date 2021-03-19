@@ -10,7 +10,7 @@ const Header = (props) => {
 		<nav className="font-montserrat grid grid-cols-3  p-3 bg-black text-white items-center">
 			<Link href="/">
 				<button className="rounded tablet:place-self-center">
-					<img src="/corte.png" width={60} height={20} href="/" className="" />
+					<img src="/site.png" width={60} height={20} href="/" className="" />
 				</button>
 			</Link>
 			<img src="/hiperp.png" href="/" className="w-max" />
