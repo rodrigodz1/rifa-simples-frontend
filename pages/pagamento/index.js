@@ -39,7 +39,7 @@ function Content({ router: { query } }) {
 
 
     return (
-        <div className="font-montserrat absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
+        <div className="font-montserrat tablet:absolute tablet:inset-0 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">
             <Header name="INÍCIO" sorteios="/sorteios" />
             <div className="">
                 {(paymentDetails.valueBought !== 0) ? <div className="grid grid-cols-1 mx-6 pt-2">
@@ -166,7 +166,7 @@ function Content({ router: { query } }) {
                             </div> : null
                         }
                     </div>
-                    <div className="absolute bottom-0 w-full"><Footer /></div>
+                    <div className="tablet:absolute tablet:bottom-0 w-full"><Footer /></div>
                 </div> : <div className="text-xl text-white text-center">Se você está vendo essa página, provavelmente algo errado aconteceu ao reservar seu número.<p>-</p><p>Entre em contato conosco via WhatsApp para solucionar esse problema o mais rápido possível: |colocar botao aqui dps|</p><div className="absolute bottom-0 w-full"><Footer /></div></div>}
 
             </div>
