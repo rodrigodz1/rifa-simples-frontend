@@ -9,7 +9,7 @@ function Terms() {
 
 
     return (
-        <div className="font-montserrat">
+        <div className="font-montserrat select-none">
 
 
             <div className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900">

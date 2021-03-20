@@ -16,10 +16,10 @@ function Contact() {
                     Entre em contato com a gente!
                     <p><a target="_blank" href="https://wa.me/559182264084"><button className="text-sm bg-green-600 p-1 rounded-md m-2">Clique para abrir uma conversa no WhatsApp</button></a></p>
                     <div className="font-medium mt-5">Grupos</div>
-                    <p><button className="text-sm bg-green-500 p-1 rounded-md m-2">Grupo do WhatsApp</button></p>
-                    <p><button className="text-sm bg-blue-900 p-1 rounded-md m-2">Grupo do Telegram </button></p>
+                    <p><a target="_blank" href="https://chat.whatsapp.com/GH5d47AWfJe1qPyHytFXeZ"><button className="text-sm bg-green-500 p-1 rounded-md m-2">Grupo do WhatsApp</button></a></p>
+                    <p><a target="_blank" href="https://t.me/joinchat/L7C8bXvMKFUyY2Jh"><button className="text-sm bg-blue-900 p-1 rounded-md m-2">Grupo do Telegram </button></a></p>
                     <div className="font-medium mt-5">Endereço de e-mail</div>
-                    <span className="text-sm ">email@pracontato.com.br</span>
+                    <span className="text-sm ">hiperpremios@gmail.com</span>
                     <div className="font-medium mt-5">Nosso Instagram:</div>
                     <a target="_blank" href="https://www.instagram.com/hiperpremiosonline/"><button className="text-sm bg-pink-600 p-1 rounded-md m-2">Instagram</button></a>
                 </div>
