@@ -25,13 +25,11 @@ function Terms() {
                         <p className="py-2">A Hiper Prêmios é uma plataforma de sorteios de prêmios baseado na venda de cotas dos bens ou valores sorteados.
                         O valor anunciado das rifas refere-se a uma cota (número, dezena, centena ou milhar) do bem, coisa ou valor sorteado.
                         Não existe limite de aquisição de cotas por usuário.
-Todos os nossos sorteios são extraídos da Loteria Federal as quartas e sábados às 19hs, caso a data do sorteio for anunciada.</p>
+Todos os nossos sorteios são extraídos da Loteria Federal.</p>
 
                         <p className="py-2 font-medium">II - Requisitos Cadastro</p>
 
-                        <p className="py-2">Pessoa física com 18 anos ou mais.
-                        O comprador concede o direito prévio da divulgação de seu nome e telefone para o organizador da rifa/sorteio,
-                        para que o organizador possa entrar em contato e notificá-lo, caso o vencedor não entre em contato antecipadamente.
+                        <p className="py-2">Ter no mínimo 18 anos de idade. Além disso, o comprador autoriza a divulgação do seu nome em todos certificados adquiridos no site e autoriza também a divulgação do nome nas redes sociais caso seja um dos ganhadores.
                         </p>
 
                         <p className="py-2 font-medium">III - Como funciona</p>
@@ -84,7 +82,7 @@ Todos os nossos sorteios são extraídos da Loteria Federal as quartas e sábado
 
                         <p className="py-2">Nesse caso, os números extraídos serão os quatro últimos números do 1° prêmio. Portanto o resultado do prêmio principal seria a milhar <span className="font-bold">1323 (mil trezentos e vinte e três).</span> Se houvessem mais premiados e não apenas um, o 2° premiado seria a combinação dos quatro últimos números do segundo prêmio e assim sucessivamente e nessa ordem até o preenchimento de todos os premiados.</p>
 
-                        <p className="py-2">A data do sorteio será anunciada em todas as nossas redes sociais (Telegram, Whatsapp, Instagram) quando 100% das cotas forem vendidas.</p>
+                        <p className="py-2">A data do sorteio será anunciada em todas as nossas redes sociais (Telegram, Whatsapp e Instagram) quando 100% das cotas forem vendidas.</p>
                         <p>.</p>
                     </div>
                 </div>

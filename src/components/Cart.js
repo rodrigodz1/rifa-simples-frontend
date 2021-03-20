@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import React, { Component, useState } from 'react'
 import { Form, Button } from 'semantic-ui-react'
 import Router, { withRouter } from 'next/router'
@@ -188,7 +188,7 @@ class Cart extends Component {
 
 
                         </h1>
-
+                        <div className="text-white text-sm">Ao prosseguir você concorda com nossos <Link href='../termos'>Termos.</Link></div>
                         <Button className="mt-1 bg-yellow-500 text-white p-1 rounded-md" type="submit" disabled={this.state.reservedWasClicked}>
                             <div className="flex">
                                 {

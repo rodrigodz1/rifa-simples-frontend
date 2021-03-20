@@ -1,4 +1,5 @@
 import Router from 'next/router';
+import Link from 'next/link'
 import React, { Component, useEffect } from 'react'
 
 
@@ -16,7 +17,7 @@ function Content(props) {
 
 			<div className="font-bold text-lg pt-4">
 
-				Redirecionando você à página de sorteios...
+				Redirecionando você à página de sorteios... <Link href='/sorteios/1'><button className="text-blue-500">Clique aqui</button></Link> caso não tenha sido redirecionado.
 			</div>
 		</div>
 	)

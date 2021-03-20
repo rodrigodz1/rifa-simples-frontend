@@ -7,6 +7,7 @@ import Slider from 'react-slick';
 import Router from 'next/router'
 
 
+
 function Home({ rifas }) {
 
   const { API_URL } = process.env
