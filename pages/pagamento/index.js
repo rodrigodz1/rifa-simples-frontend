@@ -187,11 +187,19 @@ function Content({ router: { query } }) {
                         </div>
                     </div>
 
-                </div> <Instructions /> </div> : <div className="text-xl text-white text-center ">Se você está vendo essa página, provavelmente algo errado aconteceu ao reservar seu número.<p>-</p><p>Entre em contato conosco via WhatsApp para solucionar esse problema o mais rápido possível: <p><a href="https://wa.me/559182264084"><button className="bg-green-500 p-1 mt-2 rounded-md" >Nosso WhatsApp</button></a></p></p></div>}
-
-                {
-                    isFooterVisible ? <div className="desktop:absolute bottom-0 w-full"><Footer /></div> : null
+                </div> <Instructions />
+                    {
+                        isFooterVisible ? <div className="desktop:absolute bottom-0 w-full"><Footer /></div> : null
+                    }
+                </div> :
+                    <div className="text-xl text-white text-center ">Se você está vendo essa página, provavelmente algo errado aconteceu ao reservar seu número.<p>-</p><p>Entre em contato conosco via WhatsApp para solucionar esse problema o mais rápido possível: <p><a href="https://wa.me/559182264084"><button className="bg-green-500 p-1 mt-2 rounded-md" >Nosso WhatsApp</button></a></p></p>
+                        {
+                            isFooterVisible ? <div className="absolute bottom-0 w-full"><Footer /></div> : null
+                        }
+                    </div>
                 }
+
+
 
             </div>
 
