@@ -182,7 +182,7 @@ class Cart extends Component {
 
 
                         <h1 className="grid grid-cols-5 text-white shadow-xl mx-4"> {this.state.numbers.map(nm =>
-                            <div className="bg-black rounded-md p-1 m-1">
+                            <div className="text-sm bg-black rounded-md tablet:p-1 m-1">
                                 {nm}
                             </div>)}
 
@@ -206,7 +206,7 @@ class Cart extends Component {
                 </div>
                 <div>
                     <p className="text-white font-bold">Total: {(this.state.numbers).length} x {this.precoDaRifa} = R$ {(this.state.numbers).length * this.precoDaRifa}</p>
-                    <button onClick={_ => document.location.reload()} className="bg-black text-white m-2 mb-2 p-1 rounded-md" >Limpar carrinho</button>
+                    <button onClick={_ => document.location.reload()} className="bg-black text-white p-1 rounded-md" >Limpar carrinho</button>
                 </div>
 
             </div >
