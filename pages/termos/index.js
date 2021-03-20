@@ -31,7 +31,7 @@ Todos os nossos sorteios são extraídos da Loteria Federal as quartas e sábado
 
                         <p className="py-2">Pessoa física com 18 anos ou mais.
                         O comprador concede o direito prévio da divulgação de seu nome e telefone para o organizador da rifa/sorteio,
-                        para que o organizador possa entrar em contato e notificá-lo, caso não entre em contato antecipadamente, caso seja o vencedor.
+                        para que o organizador possa entrar em contato e notificá-lo, caso o vencedor não entre em contato antecipadamente.
                         </p>
 
                         <p className="py-2 font-medium">III - Como funciona</p>
