@@ -25,7 +25,7 @@ function Contact() {
                 </div>
 
             </div>
-            <span className="absolute bottom-0 w-full"><Footer /></span>
+            <span className="tablet:absolute bottom-0 w-full"><Footer /></span>
         </div>
 
     )
