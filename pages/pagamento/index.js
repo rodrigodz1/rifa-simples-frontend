@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Header from '../../src/components/Header'
 import Footer from '../../src/components/Footer'
+import Instructions from '../../src/components/Instructions'
 import { withRouter } from 'next/router'
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -137,58 +138,59 @@ function Content({ router: { query } }) {
     <Bank name="PicPay" padding="pt-3" img="/pp.png" owner="RODRIGO DE BRITO" account={[91011, 11109]} />*/}
 
                         </div>
+                        <div className="">
+                            {
+                                nubank ? <div className=" text-left pl-20 bg-gray-700 text-white border-b-2">
+                                    <p>Nubank:</p>
+                                    <p>Agência: 0001</p>
+                                    <p>Conta: 25085155-6</p>
+                                    <p>Nome: FELIPE V MACHADO</p>
+                                    <p className="font-bold">Nos envie o comprovante:</p>
+                                    <div className=" h-full">
 
-                        {
-                            nubank ? <div className=" text-left pl-20 bg-gray-700 text-white border-b-2">
-                                <p>Nubank:</p>
-                                <p>Agência: 0001</p>
-                                <p>Conta: 25085155-6</p>
-                                <p>Nome: FELIPE V MACHADO</p>
-                                <p className="font-bold">Nos envie o comprovante:</p>
-                                <div className=" h-full">
+                                        <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
 
-                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
-
-                                </div>
-                            </div> : null
-                        }
-                        {
-                            bancodobrasil ? <div className="text-left pl-20 bg-gray-700 text-white border-b-2">
-                                <p>BB</p>
-                                <p>Agência: 1777-9</p>
-                                <p>Conta: 18319-9</p>
-                                <p>FELIPE V MACHADO</p>
-                                <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="h-full">
-                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
-                                </div>
-                            </div> : null
-                        }
-                        {
-                            pix ? <div className="text-left pl-20 bg-gray-700 text-white border-b-2">
-                                <p>Chave PIX, email: </p>
-                                <p className="font-bold">epilef231veras@gmail.com</p>
-                                <p>Transferir à: FELIPE V MACHADO</p>
-                                <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="h-full">
-                                    <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
-                                </div>
-                            </div> : null
-                        }
-                        {
-                            picpay ? <div className="text-left bg-gray-700 text-white">
-                                <p className="font-bold">Nos envie o comprovante:</p>                                        <div className=" h-full">
-                                    <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
-                                </div>
-                                <p className="">Acesse o link <a className="text-blue-500" href='https://picpay.me/felipeverasm'>https://picpay.me/felipeverasm</a></p>
+                                    </div>
+                                </div> : null
+                            }
+                            {
+                                bancodobrasil ? <div className="text-left pl-20 bg-gray-700 text-white border-b-2">
+                                    <p>BB</p>
+                                    <p>Agência: 1777-9</p>
+                                    <p>Conta: 18319-9</p>
+                                    <p>FELIPE V MACHADO</p>
+                                    <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="h-full">
+                                        <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
+                                    </div>
+                                </div> : null
+                            }
+                            {
+                                pix ? <div className="text-left pl-20 bg-gray-700 text-white border-b-2">
+                                    <p>Chave PIX, email: </p>
+                                    <p className="font-bold">epilef231veras@gmail.com</p>
+                                    <p>Transferir à: FELIPE V MACHADO</p>
+                                    <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="h-full">
+                                        <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
+                                    </div>
+                                </div> : null
+                            }
+                            {
+                                picpay ? <div className="text-left bg-gray-700 text-white">
+                                    <p className="font-bold">Nos envie o comprovante:</p>                                        <div className=" h-full">
+                                        <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
+                                    </div>
+                                    <p className="">Acesse o link <a className="text-blue-500" href='https://picpay.me/felipeverasm'>https://picpay.me/felipeverasm</a></p>
                                         ou pelo QRCode abaixo:
                                         <img width={320} src="/ppF.jpeg" />
-                            </div> : null
-                        }
-
+                                </div> : null
+                            }
+                        </div>
                     </div>
 
                 </div> : <div className="text-xl text-white text-center ">Se você está vendo essa página, provavelmente algo errado aconteceu ao reservar seu número.<p>-</p><p>Entre em contato conosco via WhatsApp para solucionar esse problema o mais rápido possível: <p><a href="https://wa.me/559182264084"><button className="bg-green-500 p-1 mt-2 rounded-md" >Nosso WhatsApp</button></a></p></p></div>}
+                <Instructions />
                 {
-                    isFooterVisible ? <div className="absolute bottom-0 w-full"><Footer /></div> : null
+                    isFooterVisible ? <div className="desktop:absolute bottom-0 w-full"><Footer /></div> : null
                 }
 
             </div>

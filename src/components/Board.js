@@ -117,9 +117,26 @@ class Board extends Component {
                                 //let count = 0
 
                                 if (botao < 10) {
-                                    botao = "00" + botao
+                                    if (this.state.total_tickets === 10000) {
+                                        botao = "000" + botao
+                                    }
+                                    else if (this.state.total_tickets === 1000) {
+                                        botao = "00" + botao
+                                    }
+                                    else if (this.state.total_tickets === 100) {
+                                        botao = "0" + botao
+                                    }
+
                                 } else if (botao < 100 && botao > 9) {
-                                    botao = "0" + botao
+                                    if (this.state.total_tickets === 10000) {
+                                        botao = "00" + botao
+                                    }
+                                    if (this.state.total_tickets === 1000) {
+                                        botao = "0" + botao
+                                    }
+                                    if (this.state.total_tickets === 100) {
+                                        botao = "" + botao
+                                    }
                                 }
 
                                 if (this.numbers.reserveds.includes(parseInt(botao))) {
