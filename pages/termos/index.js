@@ -23,13 +23,13 @@ function Terms() {
                         <p className="py-2 font-medium">I - Introdução</p>
 
                         <p className="py-2">A Hiper Prêmios é uma plataforma de sorteios de prêmios baseado na venda de cotas dos bens ou valores sorteados.
-                        O valor anunciado das rifas refere-se a uma cota (número, dezena, centena ou milhar) do bem, coisa ou valor sorteado.
+                        O valor anunciado dos sorteios refere-se a uma cota (número, dezena, centena ou milhar) do bem, coisa ou valor sorteado.
                         Não existe limite de aquisição de cotas por usuário.
 Todos os nossos sorteios são extraídos da Loteria Federal.</p>
 
                         <p className="py-2 font-medium">II - Requisitos Cadastro</p>
 
-                        <p className="py-2">Ter no mínimo 18 anos de idade. Além disso, o comprador autoriza a divulgação do seu nome em todos certificados adquiridos no site e autoriza também a divulgação do nome nas redes sociais caso seja um dos ganhadores.
+                        <p className="py-2">Ter no mínimo 18 anos de idade. Além disso, o comprador autoriza a divulgação do seu nome em todos os certificados adquiridos no site e autoriza também a divulgação do nome nas redes sociais caso seja um dos ganhadores.
                         </p>
 
                         <p className="py-2 font-medium">III - Como funciona</p>
