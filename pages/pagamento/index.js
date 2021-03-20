@@ -176,12 +176,11 @@ function Content({ router: { query } }) {
                             }
                             {
                                 picpay ? <div className="text-left bg-gray-700 text-white">
+
+                                    <p className="">Acesse o link <a target="_blank" className="text-blue-500" href='https://picpay.me/hiperpremios'>https://picpay.me/hiperpremios</a></p>
                                     <p className="font-bold">Nos envie o comprovante:</p>                                        <div className=" h-full">
                                         <button className="bg-green-600 text-gray-100 p-2 mt-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
                                     </div>
-                                    <p className="">Acesse o link <a className="text-blue-500" href='https://picpay.me/felipeverasm'>https://picpay.me/felipeverasm</a></p>
-                                        ou pelo QRCode abaixo:
-                                        <img width={320} src="/ppF.jpeg" />
                                 </div> : null
                             }
                         </div>
