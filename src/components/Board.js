@@ -140,16 +140,16 @@ class Board extends Component {
                                 }
 
                                 if (this.numbers.reserveds.includes(parseInt(botao))) {
-                                    className = "select-none bg-yellow-600 text-white m-2 rounded-md ";
+                                    className = "bg-yellow-600 text-white m-2 rounded-md ";
                                     situation = 'reserved'
                                     //console.log(count);
                                     fetch_num = botao
                                 } else if (this.numbers.paids.includes(parseInt(botao))) {
-                                    className = "select-none bg-red-600 text-white m-2 rounded-md ";
+                                    className = "bg-red-600 text-white m-2 rounded-md ";
                                     situation = 'paid'
                                     fetch_num = botao
                                 } else {
-                                    className = "select-none bg-green-600 text-white m-2 rounded-md hover:bg-green-900 shadow-xl";
+                                    className = "bg-green-600 text-white m-2 rounded-md hover:bg-green-900 shadow-xl";
                                     situation = 'available'
                                     fetch_num = botao
                                 }

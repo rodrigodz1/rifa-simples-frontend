@@ -26,7 +26,7 @@ class Button extends React.Component {
             return
         }
         this.setState({ clicked: !this.state.clicked })
-        this.setState({ className: "select-none border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-100" })
+        this.setState({ className: "border border-green-600 bg-white text-green-600 m-2 rounded-md hover:bg-green-100" })
 
         //console.log(num);
         this.props.functionCallFromParent(num);
