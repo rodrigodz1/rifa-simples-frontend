@@ -144,7 +144,7 @@ function Content({ router: { query } }) {
                                     <p>Nubank:</p>
                                     <p>Agência: 0001</p>
                                     <p>Conta: 25085155-6</p>
-                                    <p>Nome: FELIPE V MACHADO</p>
+                                    <p>Titular: FELIPE VERAS MACHADO</p>
                                     <p className="font-bold">Nos envie o comprovante:</p>
                                     <div className=" h-full">
 
@@ -158,7 +158,7 @@ function Content({ router: { query } }) {
                                     <p>BB</p>
                                     <p>Agência: 1777-9</p>
                                     <p>Conta: 18319-9</p>
-                                    <p>FELIPE V MACHADO</p>
+                                    <p>Titular: FELIPE V MACHADO</p>
                                     <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="h-full">
                                         <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
                                     </div>
@@ -168,7 +168,7 @@ function Content({ router: { query } }) {
                                 pix ? <div className="text-left pl-20 bg-gray-700 text-white border-b-2">
                                     <p>Chave PIX, email: </p>
                                     <p className="font-bold">epilef231veras@gmail.com</p>
-                                    <p>Transferir à: FELIPE V MACHADO</p>
+                                    <p>Titular: FELIPE VERAS MACHADO</p>
                                     <p className="font-bold">Nos envie o comprovante:</p>                                        <div className="h-full">
                                         <button className="bg-green-600 text-gray-100 p-2 my-1 rounded-md shadow-xl"><a href={`https://wa.me/559182264084?text=Oi! Reservei os números: ` + paymentDetails.selectedNumbers + ". Esse é o ID do meu pedido: " + paymentDetails.ticketNumber}>Enviar comprovante</a></button>
                                     </div>
