@@ -171,7 +171,7 @@ class Cart extends Component {
         return (
             <div className={this.props.className}>
 
-                <div className="">
+                <div className="select-none">
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Field className="font-bold ">
                             <Form.Input className="" placeholder="Insira seu nome" label="Seu nome:" name="name" value={this.state.name} onChange={this.handleChange} />
