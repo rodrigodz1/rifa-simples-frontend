@@ -157,7 +157,7 @@ class Cart extends Component {
 
         } catch (error) {
             this.setState({ reservedWasClicked: false })
-            console.log(error.message);
+            alert("Um dos números que você selecionou já foi reservado. Por favor, atualize a página.")
         }
 
     }
