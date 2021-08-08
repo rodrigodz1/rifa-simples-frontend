@@ -42,12 +42,11 @@ function Home({ rifas }) {
       <Header name="SORTEIOS" sorteios="sorteios" />
 
       <body className="grid grid-cols-1  ">
-        {isReady ? <div className="bg-gray-800  ">
+        <div className="bg-gray-800  ">
           <Slider className="" {...settings}>
             {carrousel}
           </Slider>
-          <Content />
-        </div> : <div><Content /></div>}
+        </div>
 
 
 
