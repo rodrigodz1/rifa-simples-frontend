@@ -4,4 +4,5 @@ Site criado usando os frameworks Next.js e Tailwind CSS. Utiliza class component
 
 ## Adicionar mais detalhes em breve
 
-Em construção
+### Deploy (Vercel): https://dream-draw-rodrigodz1.vercel.app/
+### Backend: https://github.com/rodrigodz1/rifa-strapi-backend
